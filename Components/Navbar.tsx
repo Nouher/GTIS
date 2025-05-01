@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../public/logo.png";
+import { Button } from './ui/button'
+import { Menu } from 'lucide-react'
+import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
 
 
 export default function Navbar() {
@@ -23,6 +26,20 @@ export default function Navbar() {
        <div className="">
 
        </div>
+       <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="w-5 h-5" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="p-4">
+            <div className="flex flex-col gap-4">
+              <Link href="/">Home</Link>
+              <Link href="/about">About</Link>
+              <Link href="/contact">Contact</Link>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     );
   }
