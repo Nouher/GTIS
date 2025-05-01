@@ -3,6 +3,7 @@ import bg from '../public/bg2.jpg'
 import img1 from '../public/bg1.jpg'
 import Wave from "@/Components/Wave";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/Components/ui/button";
 
 
 export default function Home() {
@@ -11,11 +12,11 @@ export default function Home() {
       <div className=" w-full">
         <section className="relative h-screen w-full overflow-hidden">
           <div className="">
-            <Image src={bg} alt="silos"/>
+            <Image src={bg} alt="silos" className="move"/>
           </div>
           <div className="h-screen absolute top-0 w-full ">
             <div className=" bg-[#0a3d55ce] w-3/4 px-20 flex flex-col  h-full [clip-path:polygon(0_0,100%_0,80%_100%,0%_100%)] absolute top-0">
-              <p className="text-white text-2xl max-w-[1100px] border-l-6 border-sky-500 pl-4 mt-70 leading-13">
+              <p className="text-white text-2xl max-w-[1030px] border-l-6 border-sky-500 pl-4 mt-64 leading-14">
                 <span className="text-sky-500 font-bold">
                   GTIS 
                 </span>   is a company specializing in industrial solutions, including metallic, mechanical, and electrical assembly, automation, maintenance, as well as the supply of spare parts and engineering. Its goal is to support industrial companies in their installation and infrastructure optimization projects
@@ -33,6 +34,7 @@ export default function Home() {
           <Wave className="w-2/3 h-auto absolute bottom-0 right-0 transform "/>
           <Wave className="w-1/3 h-auto absolute bottom-0 left-0 transform scale-x-[-1]"/>
         </section>
+        <section className="h-screen"></section>
       </div>
     </div>
   );
