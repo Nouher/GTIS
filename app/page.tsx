@@ -1,7 +1,6 @@
 import Image from "next/image";
 import bg from '../public/bg2.jpg'
 import img1 from '../public/bg1.jpg'
-import Wave from "@/Components/Wave";
 import { ArrowRight } from "lucide-react";
 
 
