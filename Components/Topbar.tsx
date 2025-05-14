@@ -26,21 +26,21 @@ export default function Topbar() {
     return (
       <div className="bg-[#F8F8F8]/98 h-10 px-7 w-full flex fixed top-0 z-60 items-center justify-between">
           <div className="flex gap-4 items-center "     >
-          <Link href="https://www.facebook.com/" className="text-[#587194c9] hover:text-[#4783C2] "><FacebookIcon/></Link>
-          <Link href="https://www.facebook.com/" className="text-[#587194c9] hover:text-[#4783C2]"><InstagramIcon/></Link>
-          <Link href="https://www.facebook.com/" className="text-[#587194c9] hover:text-[#4783C2]"><LinkedInIcon/></Link>
+          <Link href="https://www.facebook.com/" className="text-sky-600 opacity-70 hover:opacity-100 "><FacebookIcon/></Link>
+          <Link href="https://www.facebook.com/" className="text-sky-600 opacity-70 hover:opacity-100"><InstagramIcon/></Link>
+          <Link href="https://www.facebook.com/" className="text-sky-600 opacity-70 hover:opacity-100"><LinkedInIcon/></Link>
             
           </div>
           <div className="flex gap-5 items-center h-full py-2">
-            <div className="flex gap-2 items-center">
-              <PhoneIcon size={16} className="text-sky-800 "/>
-              <span className="font-bold text-sky-800 text-xs">+212 661 187 453</span>
-            </div>
+            <Link href="#" className="flex gap-2 items-center hover:opacity-100 text-sky-600 opacity-70 transition cursor-pointer">
+              <PhoneIcon size={16} className=" "/>
+              <span className="font-bold  text-xs">+212 661 187 453</span>
+            </Link>
             <Separator orientation="vertical" className="h-4"/>
-            <div className="flex gap-2 items-center">
-              <MailIcon size={16} className="text-sky-800 "/>
-              <span className="font-bold text-sky-800 text-xs">Khalil.gtis@gmail.com</span>
-            </div>
+            <Link href='#' className="flex gap-2 items-center hover:opacity-100 text-sky-600 opacity-70 transition cursor-pointer">
+              <MailIcon size={16} className="text-sky-600 opacity-70 "/>
+              <span className="font-bold text-sky-600 opacity-70 text-xs">Khalil.gtis@gmail.com</span>
+            </Link>
             
           </div>
       </div>

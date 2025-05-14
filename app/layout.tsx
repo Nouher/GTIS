@@ -3,6 +3,7 @@ import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import Topbar from "@/Components/Topbar";
+import ContactGroup from "@/Components/ContactGroup";
 
 
 const ubuntu = Ubuntu({
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
         <Topbar/>
         <Navbar/>
+        <ContactGroup/>
         {/* <div className="mt-[132px]"> */}
         {children}
         {/* </div> */}
