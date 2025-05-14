@@ -24,7 +24,7 @@ export default function Navbar() {
         <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='contact'>Contact</Link></li>
        </ul>
 
-       <Link href='quet' className=" bg-sky-500 text-white z-50 px-3 py-2 rounded-sm">
+       <Link href='quet' className=" bg-[#0E70B6] text-white z-50 px-3 py-2 rounded-sm animate-pulse ">
           REQUEST FOR QUOTE
        </Link>
 

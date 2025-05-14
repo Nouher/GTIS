@@ -39,7 +39,8 @@ export default function Home() {
           {/* <Wave className="w-2/3 h-auto absolute bottom-0 right-0 transform "/>
           <Wave className="w-1/3 h-auto absolute bottom-0 left-0 transform scale-x-[-1]"/> */}
         </section>
-        <div className="bg-sky-200 w-full h-50">
+        <div className="h-2 bg-sky-500 w-full"/>
+        <div className="bg-gray-100 w-full h-50">
 
         </div>
         <section className="h-screen"></section>
