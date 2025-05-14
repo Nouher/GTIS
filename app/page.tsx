@@ -1,7 +1,9 @@
+'use client'
 import Image from "next/image";
 import bg from '../public/bg2.jpg'
 import img1 from '../public/bg1.jpg'
 import { ArrowRight } from "lucide-react";
+import { Typewriter } from "react-simple-typewriter";
 
 
 export default function Home() {
@@ -14,10 +16,15 @@ export default function Home() {
           </div>
           <div className="h-screen absolute top-0 w-full ">
             <div className=" bg-[#0a3d55ce] w-3/4 px-20 flex flex-col  h-full [clip-path:polygon(0_0,100%_0,80%_100%,0%_100%)] absolute top-0">
-              <p className="text-white text-2xl max-w-[1000px] border-l-6 border-sky-500 pl-4 mt-72 leading-16 pb-10">
+              <p className="h-72 text-white text-2xl max-w-[1000px] border-l-6 border-sky-500 pl-4 mt-72 leading-16 pb-10">
                 <span className="text-sky-500 font-bold ">
                   GTIS 
-                </span>   is a company specializing in industrial solutions, including metallic, mechanical, and electrical assembly, automation, maintenance, as well as the supply of spare parts and engineering. Its goal is to support industrial companies in their installation and infrastructure optimization projects
+                </span>   
+               <Typewriter
+                  words={[' is a company specializing in industrial solutions, including metallic, mechanical, and electrical assembly, automation, maintenance, as well as the supply of spare parts and engineering. Its goal is to support industrial companies in their installation and infrastructure optimization projects']}
+                  loop={1}
+                  typeSpeed={10}
+                />
               </p>
               <div className="flex mt-28 gap-4">
                 <button className="text-white bg-sky-500 w-2xs  h-16 rounded-full text-2xl font-bold">Contact us</button>
