@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <div className=" w-full">
         <section className="relative h-screen w-full overflow-hidden">
-          <div className="w-full h-full bg-amber-200">
+          <div className="w-full h-full ">
             {/* <Image src={bg} alt="silos" className="move w-full" /> */}
             <video src="/vd1.mp4" className="absolute top-0 left-0 w-full h-full object-cover" 
             autoPlay
