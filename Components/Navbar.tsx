@@ -15,13 +15,13 @@ export default function Navbar() {
        </div>
        <ul className=" text-black flex justify-between items-center uppercase text-xl">
         <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='/'>Home</Link></li>
-        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='services'>Services</Link></li>
-        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='services'>Projects</Link></li>
-        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='sectors'>SECTORS OF ACTIVITY</Link></li>
-        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='activity'>ACTIVITY</Link></li>
-        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='references'>REFERENCES</Link></li>
-        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='news'>NEWS</Link></li>
-        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='contact'>Contact</Link></li>
+        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='/services'>Services</Link></li>
+        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='/projects'>Projects</Link></li>
+        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='/sectors-of-activity'>SECTORS OF ACTIVITY</Link></li>
+        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='/activity'>ACTIVITY</Link></li>
+        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='/references'>REFERENCES</Link></li>
+        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='/news'>NEWS</Link></li>
+        <li className="relative px-4 text-sky-950 hover:text-[#0F71B7] transition"><Link href='/contact'>Contact</Link></li>
        </ul>
 
        <Link href='quet' className=" bg-[#0E70B6] text-white z-50 px-3 py-2 rounded-sm animate-pulse ">

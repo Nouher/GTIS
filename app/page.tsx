@@ -3,7 +3,8 @@ import Image from "next/image";
 import { ArrowRight, Cable, HandHelping, PencilRuler, Shapes, Workflow, Wrench } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
-import { Button } from "@/Components/ui/button";
+import { Button } from "@/components/ui/button";
+import StatsSection from "@/components/StatsSection";
 
 
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
           </div>
           <div className="h-full absolute top-0 w-full ">
             <div className=" bg-[#1128479d] w-full px-20 flex flex-col items-center h-full absolute top-0">
-              <p className="h-72 text-white text-2xl font-semibold max-w-[1500px] mt-60  pb-10 text-center">
+              <div className="h-72 text-white text-2xl font-semibold max-w-[1500px] mt-60  pb-10 text-center">
                 <h1 className="py-10 font-black text-6xl">
                   <span className="text-blue-400 font-bold ">
                     GTIS  
@@ -34,7 +35,7 @@ export default function Home() {
                   loop={1}
                   typeSpeed={5}
                 />
-              </p>
+              </div>
               <div className="flex gap-4">
                 <button className="text-white bg-blue-500 w-2xs h-16 rounded-full text-2xl font-bold">Contact us</button>
                 <button className="h-16 w-16 bg-white rounded-full flex justify-center items-center"><ArrowRight size={35} className="text-sky-500"/></button>
@@ -52,6 +53,7 @@ export default function Home() {
         <div className="bg-gray-100 w-full h-40 flex justify-center items-center text-xl text-center px-20 text-[#112847]">
             <p>GTIS offers complete solutions for optimizing and maintaining flour mills, including the installation of automated systems, preventive and corrective maintenance of production equipment, and the supply of spare parts specific to flour production lines.</p>
         </div>
+
         {/* <section className="h-[500px] flex items-center">
           <div className="w-full flex justify-around items-center font-bold text-2xl px-40 text-[#112847]">
             <div className="flex flex-col justify-center items-center w-68 text-center">
@@ -207,7 +209,7 @@ export default function Home() {
               ].map((news, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
                   <div className="relative h-48">
-                    <Image src={`/news-${index + 1}.jpg`} alt={news.title} fill className="object-cover" />
+                    <Image src={`/news-${index + 1}.jpeg`} alt={news.title} fill className="object-cover" />
                   </div>
                   <div className="p-6">
                     <p className="text-sm text-blue-600 mb-2">{news.date}</p>
@@ -229,7 +231,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-    
+        
+        <StatsSection/>
+
 
       </div>
     </div>
