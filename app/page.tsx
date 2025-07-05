@@ -4,9 +4,8 @@ import { ArrowRight, Cable, HandHelping, PencilRuler, Shapes, Workflow, Wrench }
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
 import { Button } from "../components/ui/button";
-import IndustrialShowcase from "../components/IndustrialShowcase";
-import PowerfulStats from "../components/PowerfulStats";
-import ServicesSection from '../components/ServicesSection'
+import PowerfulStats from "@/components/PowerfulStats";
+import IndustrialShowcase from "@/components/IndustrialShowcase";
 
 
 export default function Home() {
@@ -81,9 +80,8 @@ export default function Home() {
           </div>
         </section> */}
 
-        <ServicesSection/>
         {/* Services Section */}
-        {/* <section id="services" className="py-24 bg-gray-50">
+        <section id="services" className="py-24 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
@@ -139,7 +137,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* Projects Section */}
         <section id="projects" className="py-24 bg-white">
