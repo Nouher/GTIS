@@ -6,7 +6,7 @@ import { useState } from "react"
 // import { Button } from "@/components/ui/button"
 // import { Input } from "@/components/ui/input"
 // import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function ContactPage() {
@@ -130,7 +130,7 @@ export default function ContactPage() {
               <label htmlFor="service" className="text-sm font-medium">
                 Service of Interest
               </label>
-              <Select value={formData.service} onValueChange={handleSelectChange}>
+              {/* <Select value={formData.service} onValueChange={handleSelectChange}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
@@ -142,7 +142,7 @@ export default function ContactPage() {
                   <SelectItem value="engineering">Engineering</SelectItem>
                   <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
-              </Select>
+              </Select> */}
             </div>
 
             <div className="space-y-2">
