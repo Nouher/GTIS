@@ -32,12 +32,12 @@ export default function Topbar() {
           <div className="flex gap-5 items-center h-full py-2">
             <Link href="#" className="flex gap-2 items-center hover:opacity-100 text-sky-600 opacity-70 transition cursor-pointer">
               <PhoneIcon size={16} className=" "/>
-              <span className="font-bold  text-xs">+212 661 187 453</span>
+              <span className="font-bold  text-xs">+212 667 060 089</span>
             </Link>
             <Separator orientation="vertical" className="h-4"/>
             <Link href='#' className="flex gap-2 items-center hover:opacity-100 text-sky-600 opacity-70 transition cursor-pointer">
               <MailIcon size={16} className="text-sky-600 opacity-70 "/>
-              <span className="font-bold text-sky-600 opacity-70 text-xs">Khalil.gtis@gmail.com</span>
+              <span className="font-bold text-sky-600 opacity-70 text-xs">contact@gtis.ma</span>
             </Link>
             
           </div>

@@ -53,9 +53,9 @@ export default function Home() {
 
 
         <div className="h-1 bg-blue-500 w-full"/>
-        <div className="bg-gray-100 w-full h-40 flex justify-center items-center text-xl text-center px-20 text-[#112847]">
+        {/* <div className="bg-gray-100 w-full h-40 flex justify-center items-center text-xl text-center px-20 text-[#112847]">
             <p>GTIS offers complete solutions for optimizing and maintaining flour mills, including the installation of automated systems, preventive and corrective maintenance of production equipment, and the supply of spare parts specific to flour production lines.</p>
-        </div>
+        </div> */}
         <PowerfulStats/>
         <IndustrialShowcase/>
  
