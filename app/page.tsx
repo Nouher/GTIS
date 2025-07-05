@@ -3,10 +3,10 @@ import Image from "next/image";
 import { ArrowRight, Cable, HandHelping, PencilRuler, Shapes, Workflow, Wrench } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import IndustrialShowcase from "@/components/IndustrialShowcase";
-import PowerfulStats from "@/components/PowerfulStats";
-import ServicesSection from '@/components/ServicesSection'
+import { Button } from "../components/ui/button";
+import IndustrialShowcase from "../components/IndustrialShowcase";
+import PowerfulStats from "../components/PowerfulStats";
+import ServicesSection from '../components/ServicesSection'
 
 
 export default function Home() {
