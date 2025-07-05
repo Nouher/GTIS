@@ -3,9 +3,9 @@ import Image from "next/image";
 import { ArrowRight, Cable, HandHelping, PencilRuler, Shapes, Workflow, Wrench } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
-import { Button } from "../components/ui/button";
 import PowerfulStats from "@/components/PowerfulStats";
 import IndustrialShowcase from "@/components/IndustrialShowcase";
+import { Button } from "@/components/ui/button";
 
 
 export default function Home() {
