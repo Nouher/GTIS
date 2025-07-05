@@ -175,7 +175,10 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-12">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">View All Projects</Button>
+              <Button variant="ghost" size="lg" className="group-hover:bg-blue-400 bg-blue-500 group-hover:text-blue-600 transition-all duration-300 text-white  border-blue-500">
+                View All Projects
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
             </div>
           </div>
         </section>
@@ -230,7 +233,7 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-12">
-              <Button  className="border-blue-600 text-blue-600 hover:bg-blue-50">
+              <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
                 View All News
               </Button>
             </div>
