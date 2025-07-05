@@ -3,8 +3,8 @@ import Image from "next/image";
 import { ArrowRight, Cable, HandHelping, PencilRuler, Shapes, Workflow, Wrench } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
-import PowerfulStats from "@/components/PowerfulStats";
-import IndustrialShowcase from "@/components/IndustrialShowcase";
+// import PowerfulStats from "@/components/PowerfulStats";
+// import IndustrialShowcase from "@/components/IndustrialShowcase";
 
 
 export default function Home() {
@@ -55,8 +55,8 @@ export default function Home() {
         <div className="bg-gray-100 w-full h-40 flex justify-center items-center text-xl text-center px-20 text-[#112847]">
             <p>GTIS offers complete solutions for optimizing and maintaining flour mills, including the installation of automated systems, preventive and corrective maintenance of production equipment, and the supply of spare parts specific to flour production lines.</p>
         </div>
-        <PowerfulStats/>
-        <IndustrialShowcase/>
+        {/* <PowerfulStats/>
+        <IndustrialShowcase/> */}
  
         {/* <section className="h-[500px] flex items-center">
           <div className="w-full flex justify-around items-center font-bold text-2xl px-40 text-[#112847]">
