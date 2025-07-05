@@ -54,7 +54,7 @@ export default function PowerfulStats() {
   const stats = [
     {
       icon: <Building2 className="h-16 w-16 text-[#4682B4]" />,
-      number: 150,
+      number: 50,
       suffix: "+",
       title: "projects",
       description: "Successfully completed industrial projects",
@@ -75,7 +75,7 @@ export default function PowerfulStats() {
     },
     {
       icon: <Users className="h-16 w-16 text-[#4682B4]" />,
-      number: 50,
+      number: 150,
       suffix: "+",
       title: "professionals",
       description: "With state of the art expertise and facilities",
