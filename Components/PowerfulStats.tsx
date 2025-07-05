@@ -86,10 +86,12 @@ export default function PowerfulStats() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
-        {/* <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">GTIS Solutions</h2>
-          <p className="text-xl text-gray-500 font-light tracking-wide uppercase">RELIABLE INDUSTRIAL SERVICES</p>
-        </div> */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Global Technical Industry Services</h2>
+              <div className="w-60 h-1 mt-6 bg-blue-300 mx-auto"></div>
+
+          {/* <p className="text-xl text-gray-500 font-light tracking-wide uppercase">RELIABLE INDUSTRIAL SERVICES</p> */}
+        </div>
 
         {/* Stats Row */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
