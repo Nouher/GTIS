@@ -5,7 +5,6 @@ import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
 import PowerfulStats from "@/components/PowerfulStats";
 import IndustrialShowcase from "@/components/IndustrialShowcase";
-import { Button } from "@/components/ui/button";
 
 
 export default function Home() {
@@ -175,7 +174,7 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-12">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white">View All Projects</Button>
+              <button className="bg-blue-600 hover:bg-blue-700 text-white">View All Projects</button>
             </div>
           </div>
         </section>
@@ -230,9 +229,9 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-12">
-              <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+              <button  className="border-blue-600 text-blue-600 hover:bg-blue-50">
                 View All News
-              </Button>
+              </button>
             </div>
           </div>
         </section>
