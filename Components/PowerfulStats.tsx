@@ -61,7 +61,7 @@ export default function PowerfulStats() {
     },
     {
       icon: <Globe className="h-16 w-16 text-[#4682B4]" />,
-      number: 5,
+      number: 10,
       suffix: "+",
       title: "countries",
       description: "With presence across multiple continents",
