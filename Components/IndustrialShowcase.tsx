@@ -1,13 +1,13 @@
 "use client"
 
-import { useState } from "react"
+// import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Plus, Zap, Settings, Wrench, Cog, Factory, Shield, Target, Layers } from "lucide-react"
 
 export default function IndustrialShowcase() {
  
-  const [hoveredItem, setHoveredItem] = useState<number | null>(null)
+  // const [hoveredItem, setHoveredItem] = useState<number | null>(null)
 
   const industrialServices = [
     {
@@ -122,8 +122,8 @@ export default function IndustrialShowcase() {
             <div
               key={service.id}
               className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-              onMouseEnter={() => setHoveredItem(service.id)}
-              onMouseLeave={() => setHoveredItem(null)}
+              // onMouseEnter={() => setHoveredItem(service.id)}
+              // onMouseLeave={() => setHoveredItem(null)}
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">

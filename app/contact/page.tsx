@@ -20,14 +20,14 @@ export default function ContactPage() {
     message: "",
   })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   const { name, value } = e.target
+  //   setFormData((prev) => ({ ...prev, [name]: value }))
+  // }
 
-  const handleSelectChange = (value: string) => {
-    setFormData((prev) => ({ ...prev, service: value }))
-  }
+  // const handleSelectChange = (value: string) => {
+  //   setFormData((prev) => ({ ...prev, service: value }))
+  // }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -50,8 +50,8 @@ export default function ContactPage() {
       <div className="max-w-4xl mx-auto mb-12">
         <h1 className="text-3xl md:text-4xl font-bold mb-6">Contact Us</h1>
         <p className="text-lg text-gray-600">
-          Get in touch with our team to discuss your industrial service needs. We're here to help you optimize your
-          operations and infrastructure.
+          {`Get in touch with our team to discuss your industrial service needs. We're here to help you optimize your
+          operations and infrastructure.`}
         </p>
       </div>
 
@@ -168,14 +168,14 @@ export default function ContactPage() {
         <div>
           <h2 className="text-2xl font-semibold mb-6">Request a Quote</h2>
           <p className="text-gray-600 mb-6">
-            If you're interested in our services and would like to receive a detailed quote for your project, please
-            fill out the form with your specific requirements.
+            {`If you're interested in our services and would like to receive a detailed quote for your project, please
+            fill out the form with your specific requirements.`}
           </p>
           <div className="bg-gray-50 p-6 rounded-lg mb-8">
             <h3 className="font-semibold mb-3">What to Include in Your Request:</h3>
             <ul className="list-disc list-inside text-gray-600 space-y-2">
               <li>Detailed description of your project</li>
-              <li>Specific services you're interested in</li>
+              <li>Specific services you{`'`}re interested in</li>
               <li>Timeline expectations</li>
               <li>Any special requirements or considerations</li>
               <li>Budget constraints (if applicable)</li>

@@ -1,11 +1,11 @@
 "use client"
 
-import { useState } from "react"
+// import { useState } from "react"
 import Link from "next/link"
 import { ArrowRight, Wrench, Cog, Zap, Settings, PenToolIcon as Tool, Cpu } from "lucide-react"
 
 export default function DarkServices() {
-  const [hoveredService, setHoveredService] = useState<number | null>(null)
+  // const [hoveredService, setHoveredService] = useState<number | null>(null)
 
   const services = [
     {
@@ -64,8 +64,8 @@ export default function DarkServices() {
             <div
               key={service.id}
               className="group relative"
-              onMouseEnter={() => setHoveredService(service.id)}
-              onMouseLeave={() => setHoveredService(null)}
+              // onMouseEnter={() => setHoveredService(service.id)}
+              // onMouseLeave={() => setHoveredService(null)}
             >
               {/* Card */}
               <div className="relative h-full p-8 bg-gray-800 border border-gray-700 rounded-xl transition-all duration-300 hover:bg-gray-750 hover:border-gray-600 hover:transform hover:-translate-y-1">

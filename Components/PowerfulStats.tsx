@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer"
-import { FileText, Globe, Award, Users,Building2 } from "lucide-react"
+import { Globe, Award, Users,Building2 } from "lucide-react"
 
 interface CounterProps {
   end: number
