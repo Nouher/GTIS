@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/Components/ui/button"
 import Link from "next/link"
 import { FileText, Factory, Wheat, Utensils, Building2, Droplet, Trees, Construction } from "lucide-react"
 

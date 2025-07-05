@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
-import Topbar from "../components/Topbar";
-import Navbar from "@/components/Navbar";
-import ContactGroup from "@/components/ContactGroup";
-import Footer from "@/components/Footer";
+import Topbar from "../Components/Topbar";
+import Navbar from "@/Components/Navbar";
+import ContactGroup from "@/Components/ContactGroup";
+import Footer from "@/Components/Footer";
 
 
 const ubuntu = Ubuntu({

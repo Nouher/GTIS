@@ -2,7 +2,7 @@
 
 // import { useState } from "react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/Components/ui/button"
 import { ArrowRight, Plus, Zap, Settings, Wrench, Cog, Factory, Shield, Target, Layers } from "lucide-react"
 
 export default function IndustrialShowcase() {
