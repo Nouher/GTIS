@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
-import Topbar from "@/components/Topbar";
+import Topbar from "../components/Topbar";
 import Navbar from "@/components/Navbar";
 import ContactGroup from "@/components/ContactGroup";
 import Footer from "@/components/Footer";
