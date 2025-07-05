@@ -5,6 +5,7 @@ import Topbar from "../Components/Topbar";
 import Navbar from "@/Components/Navbar";
 import ContactGroup from "@/Components/ContactGroup";
 import Footer from "@/Components/Footer";
+import Image from "next/image";
 
 
 const ubuntu = Ubuntu({
@@ -39,6 +40,7 @@ export default function RootLayout({
         {/* <div className="mt-[132px]"> */}
         {children}
         {/* </div> */}
+        
         <Footer/>
       </body>
     </html>

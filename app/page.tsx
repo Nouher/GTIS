@@ -184,7 +184,7 @@ export default function Home() {
         </section>
 
         {/* News Section */}
-        <section id="news" className="py-24 bg-gray-50">
+        <section id="news" className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Latest News</h2>
@@ -239,10 +239,22 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+        <div className="w-full h-[720px] relative opacit ">
+          <div className="absolute  top-0 left-0 w-full h-full z-10 bg-gradient-to-b from-transparent via-cyan-950/30 to-cyan-950/70"></div>
+          <div className="absolute  top-0 left-0 w-full h-full z-10 bg-gradient-to-b from-white via-white/10 to-white/70"></div>
+          
+          <Image
+              src="/map.svg"
+              alt="Industrial Project"
+              fill
+              className="object-cover object-center"
+              />
+          </div>
 
 
       </div>
+
+      
     </div>
   );
 }
