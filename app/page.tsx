@@ -4,7 +4,9 @@ import { ArrowRight, Cable, HandHelping, PencilRuler, Shapes, Workflow, Wrench }
 import { Typewriter } from "react-simple-typewriter";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import StatsSection from "@/components/StatsSection";
+import IndustrialShowcase from "@/components/IndustrialShowcase";
+import PowerfulStats from "@/components/PowerfulStats";
+import ServicesSection from '@/components/ServicesSection'
 
 
 export default function Home() {
@@ -49,11 +51,15 @@ export default function Home() {
           {/* <Wave className="w-2/3 h-auto absolute bottom-0 right-0 transform "/>
           <Wave className="w-1/3 h-auto absolute bottom-0 left-0 transform scale-x-[-1]"/> */}
         </section>
+
+
         <div className="h-1 bg-blue-500 w-full"/>
         <div className="bg-gray-100 w-full h-40 flex justify-center items-center text-xl text-center px-20 text-[#112847]">
             <p>GTIS offers complete solutions for optimizing and maintaining flour mills, including the installation of automated systems, preventive and corrective maintenance of production equipment, and the supply of spare parts specific to flour production lines.</p>
         </div>
-
+        <PowerfulStats/>
+        <IndustrialShowcase/>
+ 
         {/* <section className="h-[500px] flex items-center">
           <div className="w-full flex justify-around items-center font-bold text-2xl px-40 text-[#112847]">
             <div className="flex flex-col justify-center items-center w-68 text-center">
@@ -75,8 +81,9 @@ export default function Home() {
           </div>
         </section> */}
 
+        <ServicesSection/>
         {/* Services Section */}
-        <section id="services" className="py-24 bg-gray-50">
+        {/* <section id="services" className="py-24 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
@@ -92,36 +99,36 @@ export default function Home() {
                   title: "Metallic Assembly",
                   description:
                     "Expert metallic assembly services for industrial applications with precision engineering.",
-                  icon: <Shapes size={40}/>,
+                  icon: <Shapes size={45}/>,
                 },
                 {
                   title: "Mechanical Solutions",
                   description: "Comprehensive mechanical solutions for industrial machinery and equipment.",
-                  icon: <HandHelping size={40}/>,
+                  icon: <HandHelping size={45}/>,
                 },
                 {
                   title: "Electrical Assembly",
                   description: "Professional electrical assembly and installation for industrial facilities.",
-                  icon: <Cable size={40}/>,
+                  icon: <Cable size={45}/>,
                 },
                 {
                   title: "Automation",
                   description: "Cutting-edge automation solutions to improve efficiency and productivity.",
-                  icon: <Workflow size={40}/>,
+                  icon: <Workflow size={45}/>,
                 },
                 {
                   title: "Maintenance",
                   description: "Regular maintenance services to ensure optimal performance of your equipment.",
-                  icon: <Wrench size={40}/>,
+                  icon: <Wrench size={45}/>,
                 },
                 {
                   title: "Engineering",
                   description: "Custom engineering solutions for complex industrial challenges.",
-                  icon: <PencilRuler size={40}/>,
+                  icon: <PencilRuler size={45}/>,
                 },
               ].map((service, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg  hover:shadow-lg transition-shadow border-1 text-center flex flex-col items-center">
-                  <div className="mb-4 text-blue-500">{service.icon}</div>
+                  <div className="mb-6 text-blue-500 border-4 rounded-2xl shadow-xl border-blue-500 p-2 top-[-40px] relative bg-white">{service.icon}</div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
                   <p className="text-gray-600">{service.description}</p>
                   <Link href="#" className="mt-4 inline-flex items-center text-blue-600 hover:text-blue-800">
@@ -132,7 +139,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Projects Section */}
         <section id="projects" className="py-24 bg-white">
@@ -232,7 +239,6 @@ export default function Home() {
           </div>
         </section>
         
-        <StatsSection/>
 
 
       </div>
