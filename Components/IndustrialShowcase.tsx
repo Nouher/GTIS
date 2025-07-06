@@ -12,83 +12,90 @@ export default function IndustrialShowcase() {
   const industrialServices = [
     {
       id: 1,
-      title: "Mechanical Assembly",
-      subtitle: "Precision Engineering",
-      description: "Advanced mechanical systems and precision assembly for industrial applications",
+      title: "Flat-Bottom Grain Silos",
+      subtitle: "Assembly & Installation",
+      description: "GTIS provides full assembly and installation services for flat-bottom grain silos, ideal for high-capacity storage in industrial grain facilities. Our expert teams ensure fast, secure installation aligned with international standards, including integration of aeration, temperature monitoring, and unloading systems.",
       image: "/projects/img1.jpeg",
-      icon: <Settings className="h-8 w-8" />,
       color: "from-blue-600/80 to-blue-800/0",
-      stats: "500+ Projects",
     },
     {
       id: 2,
-      title: "Electrical Systems",
-      subtitle: "Power & Control",
-      description: "Complete electrical installation and control system integration",
-      image: "/projects/img2.jpeg",
-      icon: <Zap className="h-8 w-8" />,
+      title: "Hopper-Bottom Silos ",
+      subtitle: "Assembly & Installation",
+      description: "We offer hopper-bottom silo installation (silos on legs with conical bottoms), designed for gravity discharge, bagging systems, or fast, easy emptying. These silos are ideal for short-term storage or continuous feed operations in both industrial and agricultural settings.",
+      image: "/projects/img2.jpg",
       color: "from-amber-500/80 to-orange-600/0",
-      stats: "1000+ Installations",
     },
     {
       id: 3,
-      title: "Industrial Automation",
+      title: "Grain Handling Systems",
       subtitle: "Smart Solutions",
-      description: "Cutting-edge automation systems for maximum efficiency",
+      description: "GTIS designs and installs complete grain handling systems: chain conveyors, bucket elevators, screw augers, and more. Our solutions ensure smooth and efficient product flow between reception, storage, and shipment points, with full customization to your site layout and needs.",
       image: "/projects/img3.jpeg",
-      icon: <Cog className="h-8 w-8" />,
       color: "from-blue-600/80 to-blue-800/0",
-      stats: "300+ Automated Lines",
     },
     {
       id: 4,
-      title: "Maintenance Services",
+      title: "Complete Grain Storage Solutions",
       subtitle: "Reliability First",
-      description: "Preventive and corrective maintenance for optimal performance",
+      description: "We deliver turnkey grain storage solutions, integrating silos, intake pits, pre-cleaners, handling equipment, control systems, and outloading structures. Our solutions are tailored to meet local climate, capacity, and logistical requirements, whether for farming cooperatives or industrial clients.",
       image: "/projects/img4.jpeg",
-      icon: <Wrench className="h-8 w-8" />,
       color: "from-amber-500/80 to-orange-600/0",
-      stats: "24/7 Support",
     },
     {
       id: 5,
-      title: "Manufacturing Solutions",
-      subtitle: "Production Excellence",
-      description: "Complete manufacturing solutions from concept to delivery",
-      image: "/projects/img1.jpeg",
-      icon: <Factory className="h-8 w-8" />,
+      title: " Square Silos ",
+      subtitle: " Modular Storage Systems",
+      description: "GTIS also installs square silos, an excellent choice for interior spaces or where floor area is limited. Their modular design allows easy adaptation to existing production lines or feed systems. These silos are often used in feed mills",
+      image: "/projects/img5.jpeg",
       color: "from-blue-600/80 to-blue-800/0",
-      stats: "200+ Facilities",
     },
     {
       id: 6,
-      title: "Quality Assurance",
+      title: " Farm Silos & Livestock Housing Units",
       subtitle: "Zero Compromise",
-      description: "Rigorous quality control and testing procedures",
-      image: "/projects/img1.jpeg",
-      icon: <Shield className="h-8 w-8" />,
+      description: "We specialize in farm silos for feed storage and distribution, as well as the full installation of livestock farms (poultry, cattle, sheep). Our systems are designed to optimize hygiene, feed flow, energy efficiency, and overall farm productivity.",
+      image: "/projects/img6.jpg",
       color: "from-amber-500/80 to-orange-600/0",
-      stats: "99.9% Accuracy",
     },
     {
       id: 7,
-      title: "Project Management",
-      subtitle: "On-Time Delivery",
-      description: "End-to-end project management with guaranteed results",
-      image: "/projects/img1.jpeg",
-      icon: <Target className="h-8 w-8" />,
+      title: "Milling Plants",
+      subtitle: "Agro-Industrial Machinery Installation",
+      description: "GTIS handles the complete assembly and installation of equipment for flour mills, feed mills, and agro-processing units. We offer turnkey solutions covering grain intake, cleaning, grinding, blending, sifting, storage, and packaging. Our experienced team ensures optimal layout planning, mechanical and electrical installation, and full commissioning of your production lines. From compact modular setups to large-scale industrial milling plants, GTIS delivers precision engineering and seamless execution to meet your performance and hygiene standards.",
+      image: "/projects/img7.jpeg",
       color: "from-blue-600/80 to-blue-800/0",
-      stats: "95% On-Time",
     },
     {
       id: 8,
-      title: "Custom Engineering",
+      title: "Advanced Pneumatic Unloaders for Ports",
       subtitle: "Tailored Solutions",
-      description: "Bespoke engineering solutions for unique industrial challenges",
-      image: "/projects/img1.jpeg",
-      icon: <Layers className="h-8 w-8" />,
+      description: "GTIS installs advanced pneumatic unloading systems, enabling efficient, dust-controlled grain transfer from ships to storage, ensuring minimal losses and enhanced terminal throughput.",
+      image: "/projects/img8.jpeg",
       color: "from-amber-500/80 to-orange-600/0",
-      stats: "Unlimited Possibilities",
+    },
+    {
+      id: 9,
+      title: "Assembly and Installation of CIMAT Silos",
+      subtitle: "",
+      description: "GTIS specializes in the assembly and installation of silos for the cement industry, including high-capacity CIMAT silos. Our solutions are designed to ensure efficient storage and handling of cement and other bulk materials. We provide custom-engineered steel silos with dust control, aeration systems, and robust structural integrity to handle the specific demands of the cement sector. From civil foundation to mechanical erection and safety systems integration, GTIS guarantees reliable, durable, and efficient silo installations.",
+      image: "/projects/img9.jpeg",
+      color: "from-amber-500/80 to-orange-600/0",
+    },
+    {
+      id: 10,
+      title: "Steel Structures",
+      subtitle: "Fabrication & Installation",
+      description: `GTIS designs, fabricates, and installs custom steel structures tailored to the specific needs of agro-industrial and processing facilities.
+Our services cover the full range of metal works:
+– Catwalks and walkways for silo and equipment access
+– Support towers for conveyors and elevators
+– Service platforms for safe operation and maintenance
+– Industrial buildings and frames for storage or processing units
+
+Built with precision and engineered for strength, our steel structures ensure durability, safety, and compliance with international industrial standards.`,
+      image: "/projects/img10.jpeg",
+      color: "from-amber-500/80 to-orange-600/0",
     },
   ]
 
@@ -117,7 +124,7 @@ export default function IndustrialShowcase() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
           {industrialServices.map((service) => (
             <div
               key={service.id}
@@ -136,23 +143,20 @@ export default function IndustrialShowcase() {
 
                 {/* Gradient Overlay */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-80 group-hover:opacity-90 transition-opacity duration-300 `}
+                  className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-40 group-hover:opacity-60 transition-opacity duration-300 `}
                 ></div>
 
-                {/* Icon */}
-                <div className="absolute top-4 right-4 p-3 bg-white/20 backdrop-blur-sm rounded-full text-white">
-                  {service.icon}
-                </div>
+              
 
                 {/* Plus Icon */}
-                <div className="absolute bottom-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white group-hover:bg-white group-hover:text-gray-900 transition-all duration-300">
+                {/* <div className="absolute bottom-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white group-hover:bg-white group-hover:text-gray-900 transition-all duration-300">
                   <Plus className="h-6 w-6" />
-                </div>
+                </div> */}
 
                 {/* Stats Badge */}
-                <div className="absolute top-4 left-4 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
+                {/* <div className="absolute top-4 left-4 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
                   {service.stats}
-                </div>
+                </div> */}
               </div>
 
               {/* Content */}
@@ -163,7 +167,7 @@ export default function IndustrialShowcase() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">{service.description}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">{service.description}</p>
 
                 {/* Action Button */}
                 <Button
@@ -198,10 +202,6 @@ export default function IndustrialShowcase() {
         </div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute top-1/4 left-10 w-4 h-4 bg-blue-400 rounded-full animate-pulse"></div>
-      <div className="absolute top-1/3 right-10 w-6 h-6 bg-purple-400 rounded-full animate-pulse delay-1000"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-3 h-3 bg-green-400 rounded-full animate-pulse delay-2000"></div>
     </section>
   )
 }

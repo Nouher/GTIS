@@ -140,7 +140,7 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-24 bg-white">
+        {/* <section id="projects" className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Projects</h2>
@@ -181,7 +181,7 @@ export default function Home() {
                 </Button>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* News Section */}
         <section id="news" className="py-24 bg-white">
