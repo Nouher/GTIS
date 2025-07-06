@@ -35,11 +35,13 @@ export default function RootLayout({
       >
         <Topbar/>
         <Navbar/>
+        
         <ContactGroup/>
         {/* <div className="mt-[132px]"> */}
         {children}
         {/* </div> */}
         <Footer/>
+
       </body>
     </html>
   );

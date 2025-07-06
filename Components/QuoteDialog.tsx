@@ -17,7 +17,7 @@ export function QuoteDialog() {
     <Dialog>
       <form>
         <DialogTrigger asChild>
-          <Button variant="outline" size="lg" className="bg-[#0E70B6] text-white z-50 px-3 py-2 rounded-sm animate-pulse hover:bg-[#6ea0c4] hover:text-white hover:scale-105">REQUEST FOR QUOTE</Button>
+          <Button variant="outline" size="lg" className="bg-[#0E70B6] text-white z-50 px-3 py-2 rounded-sm animate-pulse hover:bg-[#6ea0c4] hover:text-white hover:scale-105 hidden lg:flex">REQUEST FOR QUOTE</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>

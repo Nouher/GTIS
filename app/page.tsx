@@ -23,22 +23,24 @@ export default function Home() {
 
           </div>
           <div className="h-full absolute top-0 w-full ">
-            <div className=" bg-[#1128479d] w-full px-20 flex flex-col items-center h-full absolute top-0">
-              <div className="h-72 text-white text-2xl font-semibold max-w-[1500px] mt-60  pb-10 text-center">
-                <h1 className="py-10 font-black text-6xl">
+            <div className=" bg-[#1128479d] w-full px-0 lg:px-20 flex flex-col items-center h-full absolute top-0">
+              <div className="h-72 text-white text-2xl font-semibold lg:max-w-[1500px] mt-42 lg:mt-60  pb-10 text-center">
+                <h1 className="lg:py-10 font-black text-4xl lg:text-6xl">
                   <span className="text-blue-400 font-bold ">
                     GTIS  
                   </span>   
                     &nbsp;Global Technical Industry Services <br />
                 </h1>
+                <div className="text-lg lg:text-2xl font-normal lg:font-medium mt-6 lg:mt-0 ">
                <Typewriter
                   words={['GTIS is a company specializing in industrial solutions, including metallic, mechanical, and electrical assembly, automation, maintenance, as well as the supply of spare parts and engineering. Its goal is to support industrial companies in their installation and infrastructure optimization projects']}
                   loop={1}
                   typeSpeed={5}
-                />
+                  />
+                  </div>
               </div>
-              <div className="flex gap-4">
-                <button className="text-white bg-blue-500 w-2xs h-16 rounded-full text-2xl font-bold">Contact us</button>
+              <div className="flex gap-4 mt-20 lg:mt-0 ">
+                <button className="text-white bg-blue-500 w-52 lg:w-2xs h-14 lg:h-16 rounded-full text-lg lg:text-2xl font-bold">Contact us</button>
                 <button className="h-16 w-16 bg-white rounded-full flex justify-center items-center"><ArrowRight size={35} className="text-sky-500"/></button>
               </div>
             </div>
