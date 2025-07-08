@@ -311,7 +311,7 @@ export default function ElectricalSystemsPage() {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
+                <p className="text-gray-700 mb-6 italic">{`"`}{testimonial.text}{`"`}</p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center mr-4">
