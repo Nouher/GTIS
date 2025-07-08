@@ -4,6 +4,7 @@
 import Image from "next/image"
 import { Button } from "@/Components/ui/button"
 import { ArrowRight, Plus, Zap, Settings, Wrench, Cog, Factory, Shield, Target, Layers } from "lucide-react"
+import Link from "next/link"
 
 export default function IndustrialShowcase() {
  
@@ -12,6 +13,7 @@ export default function IndustrialShowcase() {
   const industrialServices = [
     {
       id: 1,
+      slug:"Flat-Bottom",
       title: "Flat-Bottom Grain Silos",
       subtitle: "Assembly & Installation",
       description: "GTIS provides full assembly and installation services for flat-bottom grain silos, ideal for high-capacity storage in industrial grain facilities. Our expert teams ensure fast, secure installation aligned with international standards, including integration of aeration, temperature monitoring, and unloading systems.",
@@ -101,6 +103,7 @@ Built with precision and engineered for strength, our steel structures ensure du
 
   return (
     <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+      
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl"></div>
@@ -122,6 +125,7 @@ Built with precision and engineered for strength, our steel structures ensure du
             cutting-edge technology and unmatched expertise.
           </p>
         </div>
+
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
@@ -170,13 +174,19 @@ Built with precision and engineered for strength, our steel structures ensure du
                 <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">{service.description}</p>
 
                 {/* Action Button */}
+                {/* <Link href={`/projects/${service.title.toLowerCase().replace(/\s+/g, "-")}`}> */}
+             
                 <Button
+                  asChild
                   variant="ghost"
                   className="w-full justify-between group-hover:bg-blue-50 group-hover:text-blue-600 transition-all duration-300"
-                >
-                  Learn More
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  >
+                    <Link href={`/service/1`}>
+                      Learn More
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                 </Button>
+
               </div>
 
               {/* Hover Effect Border */}
