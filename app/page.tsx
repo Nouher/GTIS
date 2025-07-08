@@ -26,7 +26,7 @@ export default function Home() {
             <div className=" bg-[#1128479d] w-full px-0 lg:px-20 flex flex-col items-center h-full absolute top-0">
               <div className="h-72 text-white text-2xl font-semibold lg:max-w-[1500px] mt-42 lg:mt-60  pb-10 text-center">
                 <h1 className="lg:py-10 font-black text-4xl lg:text-6xl">
-                  <span className="text-blue-400 font-bold ">
+                  <span className="font-bold bg-gradient-to-b from-blue-500 to-[#8aa7b6] bg-clip-text text-transparent ">
                     GTIS  
                   </span>   
                     &nbsp;Global Technical Industry Services <br />
@@ -40,8 +40,8 @@ export default function Home() {
                   </div>
               </div>
               <div className="flex gap-4 mt-20 lg:mt-0 ">
-                <button className="text-white bg-blue-500 w-52 lg:w-2xs h-14 lg:h-16 rounded-full text-lg lg:text-2xl font-bold">Contact us</button>
-                <button className="h-16 w-16 bg-white rounded-full flex justify-center items-center"><ArrowRight size={35} className="text-sky-500"/></button>
+                <button className="text-white bg-[#0E6FB7] w-52 lg:w-2xs h-14 lg:h-16 rounded-full text-lg lg:text-2xl font-bold">Contact us</button>
+                <button className="h-16 w-16 bg-white rounded-full flex justify-center items-center"><ArrowRight size={35} className="text-[#0E6FB7]"/></button>
               </div>
             </div>
             {/* <div className="absolute right-20 top-[410px] h-[360px] w-[600px] overflow-hidden border-16 border-blue-400 z-100">
@@ -87,7 +87,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
-              <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+              <div className="w-20 h-1 bg-[#0E6FB7] mx-auto"></div>
               <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
                 We provide comprehensive industrial solutions to optimize your operations and infrastructure
               </p>
@@ -128,10 +128,10 @@ export default function Home() {
                 },
               ].map((service, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg  hover:shadow-lg transition-shadow border-1 text-center flex flex-col items-center">
-                  <div className="mb-6 text-blue-500 border-4 rounded-2xl shadow-xl border-blue-500 p-2 top-[-40px] relative bg-white">{service.icon}</div>
+                  <div className="mb-6 text-[#0E6FB7] border-4 rounded-2xl shadow-xl border-[#0E6FB7] p-2 top-[-40px] relative bg-white">{service.icon}</div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
                   <p className="text-gray-600">{service.description}</p>
-                  <Link href="#" className="mt-4 inline-flex items-center text-blue-600 hover:text-blue-800">
+                  <Link href="#" className="mt-4 inline-flex items-center text-[#0E6FB7] hover:text-[#49779b]">
                     Learn more
                     <ArrowRight className="ml-2" size={16} />
                   </Link>
@@ -190,7 +190,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Latest News</h2>
-              <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+              <div className="w-20 h-1 bg-[#0E6FB7] mx-auto"></div>
               <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
                 Stay updated with the latest developments and news from GTIS
               </p>
@@ -222,10 +222,10 @@ export default function Home() {
                     <Image src={`/news-${index + 1}.jpeg`} alt={news.title} fill className="object-cover" />
                   </div>
                   <div className="p-6">
-                    <p className="text-sm text-blue-600 mb-2">{news.date}</p>
+                    <p className="text-sm text[#0E6FB7] mb-2">{news.date}</p>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{news.title}</h3>
                     <p className="text-gray-600 mb-4">{news.excerpt}</p>
-                    <Link href="#" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+                    <Link href="#" className="inline-flex items-center text[#0E6FB7] hover:text-[#487699]">
                       Read more
                       <ArrowRight className="ml-2" size={16} />
                     </Link>
@@ -235,7 +235,7 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-12">
-              <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+              <Button variant="outline" className="border-[#0E6FB7] text-[#0E6FB7] hover:text-[#436e8f] hover:bg-blue-100">
                 View All News
               </Button>
             </div>

@@ -22,7 +22,7 @@ export default function IndustrialShowcase() {
     },
     {
       id: 2,
-      title: "Hopper-Bottom Silos ",
+      title: "Hopper-Bottom Silos",
       subtitle: "Assembly & Installation",
       description: "We offer hopper-bottom silo installation (silos on legs with conical bottoms), designed for gravity discharge, bagging systems, or fast, easy emptying. These silos are ideal for short-term storage or continuous feed operations in both industrial and agricultural settings.",
       image: "/projects/img2.jpg",
@@ -117,7 +117,7 @@ Built with precision and engineered for strength, our steel structures ensure du
             <Factory className="h-4 w-4 mr-2" />
             Industrial Excellence
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-[#0E6FB7] to-gray-900 bg-clip-text text-transparent">
             Our Industrial Capabilities
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -198,13 +198,13 @@ Built with precision and engineered for strength, our steel structures ensure du
         {/* Call to Action */}
         <div className="text-center">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button className="bg-gradient-to-r from-[#1c83d1] to-[#0E6FB7] hover:from-[#0f568d] hover:to-[#075591] text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
               Explore All Services
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
               variant="outline"
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-6 text-lg rounded-full transition-all duration-300 bg-transparent"
+              className="border-2 border-[#0E6FB7] text-[#0E6FB7] hover:bg-[#0E6FB7] hover:text-white px-8 py-6 text-lg rounded-full transition-all duration-300 bg-transparent"
             >
               Request Consultation
             </Button>

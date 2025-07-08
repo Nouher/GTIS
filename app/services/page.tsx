@@ -32,12 +32,11 @@ export default function ServicesPage() {
   const services = [
     {
       id: 1,
-      slug: "metallic-assembly",
-      title: "Metallic Assembly",
-      subtitle: "Precision Industrial Structures",
-      description:
-        "Comprehensive assembly and installation services for industrial metallic structures with precision welding and quality assurance.",
-      image: "/placeholder.svg?height=400&width=600",
+      slug: "Flat-Bottom",
+      title: "Flat-Bottom Grain Silos",
+      subtitle: "Assembly & Installation",
+      description: "GTIS provides full assembly and installation services for flat-bottom grain silos, ideal for high-capacity storage in industrial grain facilities. Our expert teams ensure fast, secure installation aligned with international standards, including integration of aeration, temperature monitoring, and unloading systems.",
+      image: "/projects/img1.jpeg",
       icon: <Wrench className="h-8 w-8" />,
       category: "assembly",
       rating: 4.9,
@@ -47,12 +46,11 @@ export default function ServicesPage() {
     },
     {
       id: 2,
-      slug: "mechanical-installation",
-      title: "Mechanical Installation",
-      subtitle: "Industrial Equipment Solutions",
-      description:
-        "Professional mechanical installation services for complex industrial equipment with precision alignment and optimization.",
-      image: "/placeholder.svg?height=400&width=600",
+      slug: "Hopper-Bottom",
+      title: "Hopper-Bottom Silos ",
+      subtitle: "Assembly & Installation",
+      description: "We offer hopper-bottom silo installation (silos on legs with conical bottoms), designed for gravity discharge, bagging systems, or fast, easy emptying. These silos are ideal for short-term storage or continuous feed operations in both industrial and agricultural settings.",
+      image: "/projects/img2.jpg",
       icon: <Cog className="h-8 w-8" />,
       category: "installation",
       rating: 4.8,
@@ -62,12 +60,11 @@ export default function ServicesPage() {
     },
     {
       id: 3,
-      slug: "electrical-systems",
-      title: "Electrical Systems",
-      subtitle: "Smart Industrial Solutions",
-      description:
-        "Complete electrical systems including automation, control systems, and smart integration for industrial applications.",
-      image: "/placeholder.svg?height=400&width=600",
+      slug: "Grain-handling-systems",
+      title: "Grain Handling Systems",
+      subtitle: "Smart Solutions",
+      description: "GTIS designs and installs complete grain handling systems: chain conveyors, bucket elevators, screw augers, and more. Our solutions ensure smooth and efficient product flow between reception, storage, and shipment points, with full customization to your site layout and needs.",
+      image: "/projects/img3.jpeg",
       icon: <Zap className="h-8 w-8" />,
       category: "electrical",
       rating: 4.9,
@@ -77,12 +74,11 @@ export default function ServicesPage() {
     },
     {
       id: 4,
-      slug: "storage-solutions",
-      title: "Storage Solutions",
-      subtitle: "Industrial Storage Systems",
-      description:
-        "Advanced storage solutions including silos, warehouses, and material handling systems for various industries.",
-      image: "/placeholder.svg?height=400&width=600",
+      slug: "complete-grain-storage-solutions",
+      title: "Complete Grain Storage Solutions",
+      subtitle: "Reliability First",
+      description: "We deliver turnkey grain storage solutions, integrating silos, intake pits, pre-cleaners, handling equipment, control systems, and outloading structures. Our solutions are tailored to meet local climate, capacity, and logistical requirements, whether for farming cooperatives or industrial clients.",
+      image: "/projects/img4.jpeg",
       icon: <Database className="h-8 w-8" />,
       category: "storage",
       rating: 4.7,
@@ -92,12 +88,11 @@ export default function ServicesPage() {
     },
     {
       id: 5,
-      slug: "industrial-automation",
-      title: "Industrial Automation",
-      subtitle: "Smart Manufacturing Solutions",
-      description:
-        "Complete automation solutions including robotics, process control, and intelligent manufacturing systems.",
-      image: "/placeholder.svg?height=400&width=600",
+      slug: "square-silos",
+      title: " Square Silos ",
+      subtitle: " Modular Storage Systems",
+      description: "GTIS also installs square silos, an excellent choice for interior spaces or where floor area is limited. Their modular design allows easy adaptation to existing production lines or feed systems. These silos are often used in feed mills",
+      image: "/projects/img5.jpeg",
       icon: <Settings className="h-8 w-8" />,
       category: "automation",
       rating: 4.8,
@@ -107,12 +102,74 @@ export default function ServicesPage() {
     },
     {
       id: 6,
-      slug: "industrial-maintenance",
-      title: "Industrial Maintenance",
-      subtitle: "Preventive & Corrective Services",
-      description:
-        "Comprehensive maintenance services ensuring optimal performance and longevity of industrial equipment.",
-      image: "/placeholder.svg?height=400&width=600",
+      slug: "farm-silos-livestock-housing-units",
+      title: " Farm Silos & Livestock Housing Units",
+      subtitle: "Zero Compromise",
+      description: "We specialize in farm silos for feed storage and distribution, as well as the full installation of livestock farms (poultry, cattle, sheep). Our systems are designed to optimize hygiene, feed flow, energy efficiency, and overall farm productivity.",
+      image: "/projects/img6.jpg",
+      icon: <Shield className="h-8 w-8" />,
+      category: "maintenance",
+      rating: 4.9,
+      projects: 800,
+      features: ["Preventive maintenance", "Emergency repairs", "Spare parts", "Performance monitoring"],
+      price: "From $40/hour",
+    },
+    {
+      id: 7,
+      slug: "milling-plants",
+      title: "Milling Plants",
+      subtitle: "Agro-Industrial Machinery Installation",
+      description: "GTIS handles the complete assembly and installation of equipment for flour mills, feed mills, and agro-processing units. We offer turnkey solutions covering grain intake, cleaning, grinding, blending, sifting, storage, and packaging. Our experienced team ensures optimal layout planning, mechanical and electrical installation, and full commissioning of your production lines. From compact modular setups to large-scale industrial milling plants, GTIS delivers precision engineering and seamless execution to meet your performance and hygiene standards.",
+      image: "/projects/img7.jpeg",
+      icon: <Shield className="h-8 w-8" />,
+      category: "maintenance",
+      rating: 4.9,
+      projects: 800,
+      features: ["Preventive maintenance", "Emergency repairs", "Spare parts", "Performance monitoring"],
+      price: "From $40/hour",
+    },
+    {
+      id: 8,
+      slug: "Advanced-Pneumatic-Unloaders-for-Ports",
+      title: "Advanced Pneumatic Unloaders for Ports",
+      subtitle: "Tailored Solutions",
+      description: "GTIS installs advanced pneumatic unloading systems, enabling efficient, dust-controlled grain transfer from ships to storage, ensuring minimal losses and enhanced terminal throughput.",
+      image: "/projects/img8.jpeg",
+      icon: <Shield className="h-8 w-8" />,
+      category: "maintenance",
+      rating: 4.9,
+      projects: 800,
+      features: ["Preventive maintenance", "Emergency repairs", "Spare parts", "Performance monitoring"],
+      price: "From $40/hour",
+    },
+    {
+      id: 9,
+      slug: "Assembly and Installation of CIMAT Silos",
+      title: "Assembly and Installation of CIMAT Silos",
+      subtitle: "",
+      description: "GTIS specializes in the assembly and installation of silos for the cement industry, including high-capacity CIMAT silos. Our solutions are designed to ensure efficient storage and handling of cement and other bulk materials. We provide custom-engineered steel silos with dust control, aeration systems, and robust structural integrity to handle the specific demands of the cement sector. From civil foundation to mechanical erection and safety systems integration, GTIS guarantees reliable, durable, and efficient silo installations.",
+      image: "/projects/img9.jpeg",
+      icon: <Shield className="h-8 w-8" />,
+      category: "maintenance",
+      rating: 4.9,
+      projects: 800,
+      features: ["Preventive maintenance", "Emergency repairs", "Spare parts", "Performance monitoring"],
+      price: "From $40/hour",
+    },
+    {
+      id: 10,
+      slug: "farm-silos-livestock-housing-units",
+      title: "Steel Structures",
+      subtitle: "Fabrication & Installation",
+      description: `GTIS designs, fabricates, and installs custom steel structures tailored to the specific needs of agro-industrial and processing facilities.
+Our services cover the full range of metal works:
+– Catwalks and walkways for silo and equipment access
+– Support towers for conveyors and elevators
+– Service platforms for safe operation and maintenance
+– Industrial buildings and frames for storage or processing units
+
+Built with precision and engineered for strength, our steel structures ensure durability, safety, and compliance with international industrial standards.`,
+      image: "/projects/img10.jpeg",
       icon: <Shield className="h-8 w-8" />,
       category: "maintenance",
       rating: 4.9,
@@ -149,10 +206,10 @@ export default function ServicesPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/bg1.jpg"
+            src="/services-bg.jpeg"
             alt="Services Background"
             fill
-            className="object-cover"
+            className="object-cover object-top"
             priority
           />
           <div className="absolute inset-0 bg-cyan-900/60" />
@@ -285,7 +342,7 @@ export default function ServicesPage() {
                   </div>
 
                   <p className="text-gray-600 text-sm mb-2">{service.subtitle}</p>
-                  <p className="text-gray-700 mb-4 leading-relaxed">{service.description}</p>
+                  <p className="text-gray-700 mb-4 leading-relaxed line-clamp-3">{service.description}</p>
 
                   {/* Features */}
                   <div className="space-y-2 mb-6">
@@ -384,7 +441,7 @@ export default function ServicesPage() {
       <section className="relative py-24 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <Image src="/bg1.jpg" alt="Contact Background" fill className="object-cover" />
+          <Image src="/services-bg2.jpeg" alt="Contact Background" fill className="object-cover object-bottom" />
           <div className="absolute inset-0 bg-cyan-950/70" />
         </div>
 
