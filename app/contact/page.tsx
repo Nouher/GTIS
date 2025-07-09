@@ -3,10 +3,10 @@
 import type React from "react"
 
 import { useState } from "react"
-// import { Button } from "@/components/ui/button"
-// import { Input } from "@/components/ui/input"
-// import { Textarea } from "@/components/ui/textarea"
-// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Button } from "@/Components/ui/button"
+import { Input } from "@/Components/ui/input"
+import { Textarea } from "@/Components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/Components/ui/select"
 import { Mail, Phone, MapPin } from "lucide-react"
 
 export default function ContactPage() {
@@ -20,14 +20,14 @@ export default function ContactPage() {
     message: "",
   })
 
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  //   const { name, value } = e.target
-  //   setFormData((prev) => ({ ...prev, [name]: value }))
-  // }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
-  // const handleSelectChange = (value: string) => {
-  //   setFormData((prev) => ({ ...prev, service: value }))
-  // }
+   const handleSelectChange = (value: string) => {
+     setFormData((prev) => ({ ...prev, service: value }))
+   }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -46,7 +46,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-16 mt-28">
       <div className="max-w-4xl mx-auto mb-12">
         <h1 className="text-3xl md:text-4xl font-bold mb-6">Contact Us</h1>
         <p className="text-lg text-gray-600">
@@ -94,13 +94,13 @@ export default function ContactPage() {
                 <label htmlFor="name" className="text-sm font-medium">
                   Full Name *
                 </label>
-                {/* <Input id="name" name="name" value={formData.name} onChange={handleChange} required /> */}
+                 <Input id="name" name="name" value={formData.name} onChange={handleChange} required /> 
               </div>
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium">
                   Email Address *
                 </label>
-                {/* <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required /> */}
+                 <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required /> 
               </div>
             </div>
 
@@ -109,13 +109,13 @@ export default function ContactPage() {
                 <label htmlFor="phone" className="text-sm font-medium">
                   Phone Number
                 </label>
-                {/* <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} /> */}
+                 <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} /> 
               </div>
               <div className="space-y-2">
                 <label htmlFor="company" className="text-sm font-medium">
                   Company Name
                 </label>
-                {/* <Input id="company" name="company" value={formData.company} onChange={handleChange} /> */}
+                 <Input id="company" name="company" value={formData.company} onChange={handleChange} /> 
               </div>
             </div>
 
@@ -123,14 +123,14 @@ export default function ContactPage() {
               <label htmlFor="subject" className="text-sm font-medium">
                 Subject *
               </label>
-              {/* <Input id="subject" name="subject" value={formData.subject} onChange={handleChange} required /> */}
+               <Input id="subject" name="subject" value={formData.subject} onChange={handleChange} required /> 
             </div>
 
             <div className="space-y-2">
               <label htmlFor="service" className="text-sm font-medium">
                 Service of Interest
               </label>
-              {/* <Select value={formData.service} onValueChange={handleSelectChange}>
+               <Select value={formData.service} onValueChange={handleSelectChange}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
@@ -142,26 +142,26 @@ export default function ContactPage() {
                   <SelectItem value="engineering">Engineering</SelectItem>
                   <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
-              </Select> */}
+              </Select> 
             </div>
 
             <div className="space-y-2">
               <label htmlFor="message" className="text-sm font-medium">
                 Message *
               </label>
-              {/* <Textarea
+              <Textarea
                 id="message"
                 name="message"
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
                 required
-              /> */}
+              />
             </div>
 
-            {/* <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
+             <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
               Send Message
-            </Button> */}
+            </Button> 
           </form>
         </div>
 
@@ -181,7 +181,7 @@ export default function ContactPage() {
               <li>Budget constraints (if applicable)</li>
             </ul>
           </div>
-          {/* <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">REQUEST FOR QUOTE</Button> */}
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">REQUEST FOR QUOTE</Button> 
         </div>
       </div>
     </div>
