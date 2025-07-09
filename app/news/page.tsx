@@ -216,7 +216,7 @@ export default function NewsPage() {
 
   const featuredArticles = articles.filter((article) => article.featured)
   const trendingArticles = articles.filter((article) => article.trending)
-  const latestArticles = articles.slice(0, 4)
+  // const latestArticles = articles.slice(0, 4)
 
   const stats = {
     totalArticles: articles.length,
@@ -312,7 +312,7 @@ export default function NewsPage() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium mb-6">
               <Star className="h-4 w-4 mr-2 text-yellow-500" />
-              Editor's Choice
+              Editor{`'`}s Choice
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Featured Articles</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -417,7 +417,7 @@ export default function NewsPage() {
 
           {/* Secondary Featured Articles */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredArticles.slice(1, 3).map((article, index) => (
+            {featuredArticles.slice(1, 3).map((article) => (
               <div
                 key={article.id}
                 className="bg-white rounded-2xl shadow-lg border border-gray-200/50 overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
@@ -502,7 +502,7 @@ export default function NewsPage() {
                 <TrendingUp className="h-4 w-4 mr-2" />
                 Trending Now
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">What's Hot in Industry</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">What{`'`}s Hot in Industry</h2>
             </div>
             <Link href="#all-articles">
               <Button variant="outline" className="hidden md:flex items-center bg-transparent">
@@ -513,7 +513,7 @@ export default function NewsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {trendingArticles.slice(0, 3).map((article, index) => (
+            {trendingArticles.slice(0, 3).map((article) => (
               <div
                 key={article.id}
                 className="bg-white rounded-2xl shadow-lg border border-gray-200/50 overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group"
