@@ -1,14 +1,32 @@
-"use client"
 
 // import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/Components/ui/button"
-import { ArrowRight, Plus, Zap, Settings, Wrench, Cog, Factory, Shield, Target, Layers } from "lucide-react"
+import { ArrowRight,  Factory } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export default function IndustrialShowcase() {
  
   // const [hoveredItem, setHoveredItem] = useState<number | null>(null)
+
+  const router = useRouter()
+
+    const slugify = (text: string) =>
+  text
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]/g, "")
+    .replace(/-+/g, "-");
+
+  const handleNavigate = (title: string) => {
+  const slug = slugify(title)
+  router.push(`/services/${slug}`)
+}
+
+
+
 
   const industrialServices = [
     {
@@ -82,7 +100,7 @@ export default function IndustrialShowcase() {
       subtitle: "",
       description: "GTIS specializes in the assembly and installation of silos for the cement industry, including high-capacity CIMAT silos. Our solutions are designed to ensure efficient storage and handling of cement and other bulk materials. We provide custom-engineered steel silos with dust control, aeration systems, and robust structural integrity to handle the specific demands of the cement sector. From civil foundation to mechanical erection and safety systems integration, GTIS guarantees reliable, durable, and efficient silo installations.",
       image: "/projects/img9.jpeg",
-      color: "from-amber-500/80 to-orange-600/0",
+      color: "from-blue-600/80 to-blue-800/0",
     },
     {
       id: 10,
@@ -107,7 +125,7 @@ Built with precision and engineered for strength, our steel structures ensure du
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -131,6 +149,7 @@ Built with precision and engineered for strength, our steel structures ensure du
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
           {industrialServices.map((service) => (
             <div
+              onClick={()=>handleNavigate(service.title)}
               key={service.id}
               className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               // onMouseEnter={() => setHoveredItem(service.id)}
@@ -177,16 +196,23 @@ Built with precision and engineered for strength, our steel structures ensure du
                 {/* <Link href={`/projects/${service.title.toLowerCase().replace(/\s+/g, "-")}`}> */}
              
                 <Button
-                  asChild
+                  onClick={()=>handleNavigate(service.title)}
                   variant="ghost"
                   className="w-full justify-between group-hover:bg-blue-50 group-hover:text-blue-600 transition-all duration-300"
+                  
                   >
-                    <Link href={`/service/1`}>
                       Learn More
                       <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                </Button>
+                </Button> 
 
+                {/* <Link
+                  href={`/projects/${slugify(service.title)}`}
+                  
+                >
+
+                  Learn More
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link> */}
               </div>
 
               {/* Hover Effect Border */}
@@ -198,9 +224,11 @@ Built with precision and engineered for strength, our steel structures ensure du
         {/* Call to Action */}
         <div className="text-center">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <Button className="bg-gradient-to-r from-[#1c83d1] to-[#0E6FB7] hover:from-[#0f568d] hover:to-[#075591] text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button asChild className="bg-gradient-to-r from-[#1c83d1] to-[#0E6FB7] hover:from-[#0f568d] hover:to-[#075591] text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+            <Link href="/services">
               Explore All Services
               <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
             </Button>
             <Button
               variant="outline"

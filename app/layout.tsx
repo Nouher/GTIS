@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${ubuntu.variable} antialiased`}
       >
-        <Topbar/>
+        <Topbar />
         <Navbar/>
         
         <ContactGroup/>

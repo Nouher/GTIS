@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../public/logo.png";
-import {QuoteDialog} from '@/Components/QuoteDialog'
 import { MobileNav } from "./MobileNav";
+import { QuoteDialog } from "./QuoteDialog";
 // import { useState } from "react";
 
 

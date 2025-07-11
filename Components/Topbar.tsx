@@ -22,7 +22,7 @@ export const LinkedInIcon = () => {
 
 export default function Topbar() {
     return (
-      <div className="bg-[#F8F8F8]/98 h-10 px-7 w-full  fixed top-0 z-60 items-center justify-between hidden lg:flex">
+      <div className="bg-[#F8F8F8]/98 h-10 px-7 w-full  fixed top-0 z-50 items-center justify-between hidden lg:flex">
           <div className="flex gap-4 items-center "     >
           <Link href="https://www.facebook.com/" className="text-sky-600 opacity-70 hover:opacity-100 "><FacebookIcon/></Link>
           <Link href="https://www.facebook.com/" className="text-sky-600 opacity-70 hover:opacity-100"><InstagramIcon/></Link>

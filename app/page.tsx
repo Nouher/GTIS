@@ -235,14 +235,18 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-12">
-              <Button variant="outline" className="border-[#0E6FB7] text-[#0E6FB7] hover:text-[#436e8f] hover:bg-blue-100">
-                View All News
-              </Button>
+              
+               <Button
+              variant="outline"
+              className="border-2 border-[#0E6FB7] text-[#0E6FB7] hover:bg-[#0E6FB7] hover:text-white px-8 py-6 text-lg rounded-full transition-all duration-300 bg-transparent"
+            >
+              View All News
+            </Button>
             </div>
           </div>
         </section>
         <div className="w-full h-[720px] relative opacit ">
-          <div className="absolute  top-0 left-0 w-full h-full z-10 bg-gradient-to-b from-transparent via-cyan-950/30 to-cyan-950/70"></div>
+          <div className="absolute  top-0 left-0 w-full h-full z-10 bg-gradient-to-b from-transparent via-blue-950/20 to-blue-950/100"></div>
           <div className="absolute  top-0 left-0 w-full h-full z-10 bg-gradient-to-b from-white via-white/10 to-white/70"></div>
           
           <Image
