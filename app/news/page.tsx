@@ -226,7 +226,7 @@ export default function NewsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white mt-28">
+    <div className="min-h-screen bg-white mt-0 lg:mt-28">
       {/* Flat Hero Section */}
       <section className="py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="container mx-auto px-4">

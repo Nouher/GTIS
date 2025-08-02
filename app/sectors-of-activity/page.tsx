@@ -145,7 +145,7 @@ export default function SectorsOfActivityPage() {
     <div>
   
           {/* Hero Section */}
-            <div className="relative w-full h-[400px] md:h-[500px] mt-28">
+            <div className="relative w-full h-[400px] md:h-[500px] mt-0 lg:mt-28">
               <div className="absolute inset-0 bg-[#1128479d] z-10" />
               <Image
                 src="/bg5.jpg"

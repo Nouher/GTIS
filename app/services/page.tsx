@@ -188,7 +188,7 @@ export default function ServicesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white mt-36">
+    <div className="min-h-screen bg-white mt-0 lg:mt-36">
       {/* Hero Section - Flat Design */}
       <section className="relative py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
         {/* Background Elements */}

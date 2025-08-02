@@ -344,7 +344,7 @@ export default function ProjectsPage() {
   const selectedCategoryData = categories.find((cat) => cat.id === selectedCategory)
 
   return (
-    <div className="min-h-screen bg-white mt-36">
+    <div className="min-h-screen bg-white mt-0 lg:mt-36">
       {/* Hero Section with Background Image */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}

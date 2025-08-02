@@ -67,7 +67,7 @@ export default function ActivityPage() {
   return (
     <div>
       {/* Enhanced Hero Section */}
-      <div className="relative bg-gradient-to-r from-[#112847]/100 via-[#0E70B8]/100 to-[#112847]/100 text-white overflow-hidden mt-36">
+      <div className="relative bg-gradient-to-r from-[#112847]/100 via-[#0E70B8]/100 to-[#112847]/100 text-white overflow-hidden mt-0 lg:mt-36">
       <Image src="/bg5.jpg" alt="img" width={1000} height={1000} className="absolute object-cover w-full h-full opacity-50"/>
 
         {/* Background pattern */}
