@@ -1,3 +1,5 @@
+
+
 export interface GalleryImage {
   id: string
   url: string
@@ -23,6 +25,7 @@ export interface Service {
   relatedServices: string[]
   gallery: GalleryImage[]
 }
+
 
 export const servicesData: Service[] = [
   {
@@ -456,3 +459,5 @@ export function getServiceBySlug(slug: string): Service | undefined {
 export function getRelatedServices(currentSlug: string, relatedSlugs: string[]): Service[] {
   return servicesData.filter((service) => relatedSlugs.includes(service.slug) && service.slug !== currentSlug)
 }
+
+
