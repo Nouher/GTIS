@@ -397,10 +397,10 @@ export default function ProjectsPage() {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               {[
-                { number: "150+", label: "Projets Réalisés", icon: <Building2 className="h-10 w-10 text-white" />, },
-                { number: "15+", label: "Pays", icon: <Globe className="h-10 w-10 text-white" /> },
-                { number: "$200M+", label: "Valeur Totale", icon: <Banknote className="h-10 w-10 text-white" /> },
-                { number: "98%", label: "Satisfaction Client", icon: <Star className="h-10 w-10 text-white" /> },
+                { number: "150+", label: "Projets Réalisés", icon: <Building2 className="h-10 w-10 text-white" />,delay: "delay-500" },
+                { number: "15+", label: "Pays", icon: <Globe className="h-10 w-10 text-white" /> ,delay: "delay-600"},
+                { number: "$200M+", label: "Valeur Totale", icon: <Banknote className="h-10 w-10 text-white" /> ,delay: "delay-700"},
+                { number: "98%", label: "Satisfaction Client", icon: <Star className="h-10 w-10 text-white" /> ,delay: "delay-800"},
               ].map((stat, index) => (
                 <div
                   key={index}
