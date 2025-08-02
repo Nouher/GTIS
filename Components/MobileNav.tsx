@@ -37,25 +37,11 @@ export function MobileNav() {
             PROJECTS
           </Link>
           <Link
-            href="/sectors"
+            href="/sectors-of-activity"
             onClick={() => setOpen(false)}
             className="text-lg font-medium border-b border-gray-200 pb-2"
           >
             SECTORS OF ACTIVITY
-          </Link>
-          <Link
-            href="/activity"
-            onClick={() => setOpen(false)}
-            className="text-lg font-medium border-b border-gray-200 pb-2"
-          >
-            ACTIVITY
-          </Link>
-          <Link
-            href="/references"
-            onClick={() => setOpen(false)}
-            className="text-lg font-medium border-b border-gray-200 pb-2"
-          >
-            REFERENCES
           </Link>
           <Link
             href="/news"
