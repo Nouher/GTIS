@@ -1,19 +1,42 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, MapPin, Calendar, Users, Award, Star, Filter, Search, Eye, Clock, CheckCircle, Building2, Globe, Banknote } from "lucide-react"
+import {
+  ArrowRight,
+  MapPin,
+  Calendar,
+  Users,
+  Award,
+  Star,
+  Filter,
+  Search,
+  Eye,
+  Clock,
+  CheckCircle,
+  Building2,
+  Factory,
+  Truck,
+  Zap,
+  Warehouse,
+  GrapeIcon as Grain,
+  HardHat,
+  Ship,
+  Banknote,
+  Globe,
+} from "lucide-react"
 import { Button } from "@/Components/ui/button"
-import { Badge } from "@/Components/ui/badge"
 import { Input } from "@/Components/ui/input"
+import { Badge } from "@/Components/ui/badge"
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/Components/ui/select"
 
 
 const projects = [
   {
     id: 1,
     slug: "grain-terminal-morocco",
-    title: "Grain Terminal Complex - Morocco",
+    title: "Grain Terminal Complex - Moroccoaaa",
     subtitle: "Port Storage Facility",
     description:
       "Complete installation of a 50,000-ton grain storage terminal at Casablanca Port, including 8 flat-bottom silos, pneumatic unloading systems, and automated handling equipment.",
@@ -41,7 +64,7 @@ const projects = [
     subtitle: "Complete Processing Plant",
     description:
       "Turnkey installation of a 200-ton/day feed mill including grain intake, cleaning, grinding, mixing, pelleting, and packaging systems with full automation.",
-    image: "/projects/img2.jpeg",
+    image: "/projects/img2.jpg",
     location: "Tunis, Tunisia",
     client: "Tunisia Feed Industries",
     duration: "12 months",
@@ -137,7 +160,7 @@ const projects = [
     subtitle: "Agricultural Storage Hub",
     description:
       "Construction of a modern grain elevator with 25,000-ton capacity, including intake systems, cleaning equipment, and rail/truck loading facilities.",
-    image: "/projects/img6.jpeg",
+    image: "/projects/img6.jpg",
     location: "Dakar, Senegal",
     client: "Senegal Agricultural Board",
     duration: "16 months",
@@ -161,7 +184,7 @@ const projects = [
     subtitle: "Manufacturing Complex",
     description:
       "Fabrication and installation of custom steel structures including warehouses, processing buildings, and support structures for an agro-industrial complex.",
-    image: "/projects/img6.jpeg",
+    image: "/projects/img7.jpeg",
     location: "Accra, Ghana",
     client: "Ghana Agro Industries",
     duration: "8 months",
@@ -205,55 +228,123 @@ const projects = [
 ]
 
 const categories = [
-  { id: "all", name: "All Projects", count: projects.length },
+  {
+    id: "all",
+    name: "All Projects",
+    count: projects.length,
+    icon: <Building2 className="w-4 h-4" />,
+    description: "View all completed projects",
+  },
   {
     id: "port-facilities",
     name: "Port Facilities",
     count: projects.filter((p) => p.category === "port-facilities").length,
+    icon: <Ship className="w-4 h-4" />,
+    description: "Maritime terminal and port infrastructure",
   },
-  { id: "feed-mills", name: "Feed Mills", count: projects.filter((p) => p.category === "feed-mills").length },
-  { id: "flour-mills", name: "Flour Mills", count: projects.filter((p) => p.category === "flour-mills").length },
-  { id: "livestock", name: "Livestock", count: projects.filter((p) => p.category === "livestock").length },
+  {
+    id: "feed-mills",
+    name: "Feed Mills",
+    count: projects.filter((p) => p.category === "feed-mills").length,
+    icon: <Factory className="w-4 h-4" />,
+    description: "Animal feed processing facilities",
+  },
+  {
+    id: "flour-mills",
+    name: "Flour Mills",
+    count: projects.filter((p) => p.category === "flour-mills").length,
+    icon: <Grain className="w-4 h-4" />,
+    description: "Wheat and grain processing plants",
+  },
+  {
+    id: "livestock",
+    name: "Livestock",
+    count: projects.filter((p) => p.category === "livestock").length,
+    icon: <Truck className="w-4 h-4" />,
+    description: "Modern livestock farming facilities",
+  },
   {
     id: "cement-storage",
     name: "Cement Storage",
     count: projects.filter((p) => p.category === "cement-storage").length,
+    icon: <HardHat className="w-4 h-4" />,
+    description: "Industrial cement storage systems",
   },
   {
     id: "grain-elevators",
     name: "Grain Elevators",
     count: projects.filter((p) => p.category === "grain-elevators").length,
+    icon: <Warehouse className="w-4 h-4" />,
+    description: "Agricultural storage and handling",
   },
   {
     id: "steel-structures",
     name: "Steel Structures",
     count: projects.filter((p) => p.category === "steel-structures").length,
+    icon: <HardHat className="w-4 h-4" />,
+    description: "Custom industrial steel construction",
   },
   {
     id: "port-equipment",
     name: "Port Equipment",
     count: projects.filter((p) => p.category === "port-equipment").length,
+    icon: <Zap className="w-4 h-4" />,
+    description: "Specialized port handling equipment",
   },
+]
+
+const sortOptions = [
+  { id: "year", name: "Latest Projects", icon: <Calendar className="w-4 h-4" /> },
+  { id: "value", name: "Highest Value", icon: <Award className="w-4 h-4" /> },
+  { id: "rating", name: "Top Rated", icon: <Star className="w-4 h-4" /> },
+  { id: "alphabetical", name: "A-Z", icon: <Filter className="w-4 h-4" /> },
 ]
 
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")
+  const [sortBy, setSortBy] = useState("year")
   const [searchTerm, setSearchTerm] = useState("")
+  const [isLoaded, setIsLoaded] = useState(false)
 
-  const filteredProjects = projects.filter((project) => {
-    const matchesCategory = selectedCategory === "all" || project.category === selectedCategory
-    const matchesSearch =
-      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      project.location.toLowerCase().includes(searchTerm.toLowerCase())
-    return matchesCategory && matchesSearch
-  })
+  // Trigger animations
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true)
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  const filteredProjects = projects
+    .filter((project) => {
+      const matchesCategory = selectedCategory === "all" || project.category === selectedCategory
+      const matchesSearch =
+        project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        project.location.toLowerCase().includes(searchTerm.toLowerCase())
+      return matchesCategory && matchesSearch
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case "year":
+          return Number.parseInt(b.year) - Number.parseInt(a.year)
+        case "value":
+          return Number.parseFloat(b.value.replace(/[$M]/g, "")) - Number.parseFloat(a.value.replace(/[$M]/g, ""))
+        case "rating":
+          return b.rating - a.rating
+        case "alphabetical":
+          return a.title.localeCompare(b.title)
+        default:
+          return 0
+      }
+    })
 
   const featuredProject = projects[0]
   const secondaryFeatured = projects.slice(1, 3)
+  const selectedCategoryData = categories.find((cat) => cat.id === selectedCategory)
 
   return (
-    <div className="min-h-screen bg-white mt-32">
+    <div className="min-h-screen bg-white mt-36">
       {/* Hero Section with Background Image */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -272,13 +363,21 @@ export default function ProjectsPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
             {/* Badge */}
-            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-sm font-medium mb-8">
+            <div
+              className={`inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full text-sm font-medium mb-8 transform transition-all duration-700 ${
+                isLoaded ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
+              }`}
+            >
               <Award className="w-4 h-4 mr-2 text-yellow-400" />
               <span>Completed Projects Portfolio</span>
             </div>
 
             {/* Title */}
-            <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6">
+            <h1
+              className={`text-5xl md:text-7xl font-black leading-tight mb-6 transform transition-all duration-700 delay-200 ${
+                isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
+            >
               <span className="block mb-2">Our</span>
               <span className="block bg-gradient-to-r from-gray-100 to-gray-300 bg-clip-text text-transparent">
                 Achievements
@@ -286,7 +385,11 @@ export default function ProjectsPage() {
             </h1>
 
             {/* Description */}
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p
+              className={`text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed transform transition-all duration-700 delay-400 ${
+                isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
+            >
               Discover our industrial projects completed across Africa and the Middle East, showcasing our expertise in
               assembly and installation of industrial equipment.
             </p>
@@ -294,14 +397,16 @@ export default function ProjectsPage() {
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               {[
-                  { number: "150+", label: "Projets Réalisés", icon: <Building2 className="h-10 w-10 text-white" />, },
+                { number: "150+", label: "Projets Réalisés", icon: <Building2 className="h-10 w-10 text-white" />, },
                 { number: "15+", label: "Pays", icon: <Globe className="h-10 w-10 text-white" /> },
                 { number: "$200M+", label: "Valeur Totale", icon: <Banknote className="h-10 w-10 text-white" /> },
                 { number: "98%", label: "Satisfaction Client", icon: <Star className="h-10 w-10 text-white" /> },
               ].map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300"
+                  className={`bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-500 hover:scale-105 transform ${stat.delay} ${
+                    isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                  }`}
                 >
                   <div className="text-2xl mb-2 flex justify-center">{stat.icon}</div>
                   <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
@@ -316,7 +421,11 @@ export default function ProjectsPage() {
       {/* Featured Projects Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div
+            className={`text-center mb-16 transform transition-all duration-700 delay-300 ${
+              isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
+          >
             <Badge className="bg-yellow-100 text-yellow-800 px-4 py-2 text-sm font-medium mb-4">
               <Star className="w-4 h-4 mr-2" />
               Featured Projects
@@ -331,8 +440,12 @@ export default function ProjectsPage() {
           </div>
 
           {/* Main Featured Project */}
-          <div className="mb-12">
-            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500">
+          <div
+            className={`mb-12 transform transition-all duration-700 delay-500 ${
+              isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
+          >
+            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative h-80 md:h-full">
                   <Image
@@ -382,14 +495,14 @@ export default function ProjectsPage() {
 
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link href={`/projects/${featuredProject.slug}`} className="flex-1">
-                      <Button className="w-full bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-xl">
+                      <Button className="w-full bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105">
                         <Eye className="w-4 h-4 mr-2" />
                         View Project
                       </Button>
                     </Link>
                     <Button
                       variant="outline"
-                      className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-xl bg-transparent"
+                      className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-xl bg-transparent transition-all duration-300 hover:scale-105"
                     >
                       <Users className="w-4 h-4 mr-2" />
                       Contact Team
@@ -402,10 +515,13 @@ export default function ProjectsPage() {
 
           {/* Secondary Featured Projects */}
           <div className="grid md:grid-cols-2 gap-8">
-            {secondaryFeatured.map((project) => (
+            {secondaryFeatured.map((project, index) => (
               <div
                 key={project.id}
-                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 group"
+                className={`bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 group hover:scale-105 transform ${
+                  isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                }`}
+                style={{ transitionDelay: `${700 + index * 200}ms` }}
               >
                 <div className="relative h-64">
                   <Image
@@ -441,7 +557,10 @@ export default function ProjectsPage() {
                   <div className="flex items-center justify-between">
                     <div className="text-lg font-bold text-gray-800">{project.value}</div>
                     <Link href={`/projects/${project.slug}`}>
-                      <Button size="sm" className="bg-gray-800 hover:bg-gray-900 text-white">
+                      <Button
+                        size="sm"
+                        className="bg-gray-800 hover:bg-gray-900 text-white transition-all duration-300 hover:scale-105"
+                      >
                         <ArrowRight className="w-4 h-4" />
                       </Button>
                     </Link>
@@ -456,44 +575,127 @@ export default function ProjectsPage() {
       {/* Search and Filter Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+          <div className="max-w-6xl mx-auto">
+            <div
+              className={`text-center mb-12 transform transition-all duration-700 delay-300 ${
+                isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
+            >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Explore All Our <span className="text-gray-800">Projects</span>
               </h2>
               <p className="text-lg text-gray-600">Filter by category or search for a specific project</p>
             </div>
 
-            {/* Search Bar */}
-            <div className="relative mb-8">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <Input
-                type="text"
-                placeholder="Search for a project, location, or type..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-12 pr-4 py-4 text-lg border-2 border-gray-200 rounded-2xl focus:border-gray-500 focus:ring-0"
-              />
-            </div>
+            {/* Enhanced Search and Filter Bar */}
+            <div
+              className={`bg-gradient-to-r from-gray-50 to-gray-100 rounded-3xl p-8 mb-12 shadow-lg border border-gray-200 transform transition-all duration-700 delay-500 ${
+                isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+                {/* Search Bar */}
+                <div className="md:col-span-5">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Search Projects</label>
+                  <div className="relative">
+                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <Input
+                      type="text"
+                      placeholder="Search by name, location, or type..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="pl-12 pr-4 py-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-500 focus:ring-0 bg-white shadow-sm hover:shadow-md transition-all duration-300"
+                    />
+                  </div>
+                </div>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-3 justify-center mb-12">
-              {categories.map((category) => (
-                <Button
-                  key={category.id}
-                  variant={selectedCategory === category.id ? "default" : "outline"}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`px-6 py-3 rounded-full transition-all duration-300 ${
-                    selectedCategory === category.id
-                      ? "bg-gray-800 text-white shadow-lg"
-                      : "border-gray-300 text-gray-700 hover:bg-gray-50 hover:border-gray-400"
-                  }`}
-                >
-                  <Filter className="w-4 h-4 mr-2" />
-                  {category.name}
-                  <Badge className="ml-2 bg-gray-100 text-gray-600 text-xs">{category.count}</Badge>
-                </Button>
-              ))}
+                {/* Category Filter Dropdown */}
+                <div className="md:col-span-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Project Category</label>
+                  <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                    <SelectTrigger className="py-4 px-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-500 bg-white shadow-sm hover:shadow-md transition-all duration-300">
+                      <div className="flex items-center">
+                        {selectedCategoryData?.icon}
+                        <span className="ml-2">{selectedCategoryData?.name}</span>
+                      </div>
+                    </SelectTrigger>
+                    <SelectContent className="rounded-2xl border-2 border-gray-200 shadow-2xl bg-white">
+                      {categories.map((category) => (
+                        <SelectItem
+                          key={category.id}
+                          value={category.id}
+                          className="py-4 px-4 hover:bg-gray-50 focus:bg-gray-50 rounded-xl m-1 cursor-pointer transition-all duration-200"
+                        >
+                          <div className="flex items-center justify-between w-full">
+                            <div className="flex items-center">
+                              {category.icon}
+                              <div className="ml-3">
+                                <div className="font-medium text-gray-900">{category.name}</div>
+                                <div className="text-xs text-gray-500">{category.description}</div>
+                              </div>
+                            </div>
+                            <Badge className="bg-gray-100 text-gray-600 text-xs ml-2">{category.count}</Badge>
+                          </div>
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Sort Dropdown */}
+                <div className="md:col-span-3">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
+                  <Select value={sortBy} onValueChange={setSortBy}>
+                    <SelectTrigger className="py-4 px-4 text-base border-2 border-gray-200 rounded-2xl focus:border-gray-500 bg-white shadow-sm hover:shadow-md transition-all duration-300">
+                      <div className="flex items-center">
+                        {sortOptions.find((opt) => opt.id === sortBy)?.icon}
+                        <span className="ml-2">{sortOptions.find((opt) => opt.id === sortBy)?.name}</span>
+                      </div>
+                    </SelectTrigger>
+                    <SelectContent className="rounded-2xl border-2 border-gray-200 shadow-2xl bg-white">
+                      {sortOptions.map((option) => (
+                        <SelectItem
+                          key={option.id}
+                          value={option.id}
+                          className="py-3 px-4 hover:bg-gray-50 focus:bg-gray-50 rounded-xl m-1 cursor-pointer transition-all duration-200"
+                        >
+                          <div className="flex items-center">
+                            {option.icon}
+                            <span className="ml-2 font-medium">{option.name}</span>
+                          </div>
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              {/* Results Summary */}
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <Eye className="w-4 h-4 mr-2" />
+                    <span>
+                      Showing <span className="font-semibold text-gray-900">{filteredProjects.length}</span> of{" "}
+                      <span className="font-semibold text-gray-900">{projects.length}</span> projects
+                    </span>
+                  </div>
+                  {(searchTerm || selectedCategory !== "all") && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        setSearchTerm("")
+                        setSelectedCategory("all")
+                        setSortBy("year")
+                      }}
+                      className="text-gray-600 border-gray-300 hover:bg-gray-50 rounded-xl transition-all duration-300 hover:scale-105"
+                    >
+                      Clear Filters
+                    </Button>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -506,8 +708,10 @@ export default function ProjectsPage() {
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 group"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className={`bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 group hover:scale-105 transform ${
+                  isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                }`}
+                style={{ transitionDelay: `${300 + index * 100}ms` }}
               >
                 <div className="relative h-64">
                   <Image
@@ -565,7 +769,10 @@ export default function ProjectsPage() {
                   <div className="flex items-center justify-between">
                     <div className="text-lg font-bold text-green-600">{project.value}</div>
                     <Link href={`/projects/${project.slug}`}>
-                      <Button size="sm" className="bg-gray-800 hover:bg-gray-900 text-white group-hover:bg-gray-900">
+                      <Button
+                        size="sm"
+                        className="bg-gray-800 hover:bg-gray-900 text-white group-hover:bg-gray-900 transition-all duration-300 hover:scale-105"
+                      >
                         <Eye className="w-4 h-4 mr-1" />
                         View Details
                         <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
@@ -578,10 +785,23 @@ export default function ProjectsPage() {
           </div>
 
           {filteredProjects.length === 0 && (
-            <div className="text-center py-16">
+            <div
+              className={`text-center py-16 transform transition-all duration-700 delay-500 ${
+                isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
+            >
               <div className="text-6xl mb-4">🔍</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">No projects found</h3>
               <p className="text-gray-600">Try modifying your search or filter criteria.</p>
+              <Button
+                onClick={() => {
+                  setSearchTerm("")
+                  setSelectedCategory("all")
+                }}
+                className="mt-4 bg-gray-800 hover:bg-gray-900 text-white transition-all duration-300 hover:scale-105"
+              >
+                Clear All Filters
+              </Button>
             </div>
           )}
         </div>
@@ -591,7 +811,11 @@ export default function ProjectsPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
+            <div
+              className={`text-center mb-16 transform transition-all duration-700 delay-300 ${
+                isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+              }`}
+            >
               <Badge className="bg-yellow-100 text-yellow-800 px-4 py-2 text-sm font-medium mb-4">
                 Excellence Guaranteed
               </Badge>
@@ -626,7 +850,10 @@ export default function ProjectsPage() {
               ].map((benefit, index) => (
                 <div
                   key={index}
-                  className="text-center p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all duration-300"
+                  className={`text-center p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition-all duration-500 hover:scale-105 transform ${
+                    isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+                  }`}
+                  style={{ transitionDelay: `${500 + index * 200}ms` }}
                 >
                   <div className="flex justify-center mb-6">{benefit.icon}</div>
                   <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
@@ -641,7 +868,11 @@ export default function ProjectsPage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-gray-800 to-gray-900">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
+          <div
+            className={`max-w-4xl mx-auto text-center text-white transform transition-all duration-700 delay-300 ${
+              isLoaded ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+            }`}
+          >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Start Your <span className="text-yellow-400">Project</span>?
             </h2>
@@ -650,7 +881,7 @@ export default function ProjectsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link href="/contact">
-                <Button className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-4 text-lg rounded-2xl font-semibold">
+                <Button className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-4 text-lg rounded-2xl font-semibold transition-all duration-300 hover:scale-105">
                   <Users className="w-5 h-5 mr-2" />
                   Request Quote
                   <ArrowRight className="w-5 h-5 ml-2" />
@@ -658,7 +889,7 @@ export default function ProjectsPage() {
               </Link>
               <Button
                 variant="outline"
-                className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg rounded-2xl font-semibold bg-transparent"
+                className="border-white text-white hover:bg-white/10 px-8 py-4 text-lg rounded-2xl font-semibold bg-transparent transition-all duration-300 hover:scale-105"
               >
                 <Eye className="w-5 h-5 mr-2" />
                 View More Projects

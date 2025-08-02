@@ -192,10 +192,16 @@ export default function ServicesPage() {
       {/* Hero Section - Flat Design */}
       <section className="relative py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
         {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full filter blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full filter blur-3xl animate-pulse delay-1000" />
-        </div>
+         <div className="absolute inset-0">
+            <Image
+              src="/services-bg.jpeg"
+              alt="Projects Background"
+              fill
+              className="object-cover object-top"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-800/80 to-gray-700/70" />
+          </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">

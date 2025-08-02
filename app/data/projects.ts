@@ -1,5 +1,5 @@
-import  React from "react"
-import { Database, Zap, Shield, Settings } from "lucide-react"
+import type React from "react"
+import { Database, Zap, Shield, Settings, Target, TrendingUp } from "lucide-react"
 
 export interface Project {
   id: number
@@ -9,6 +9,7 @@ export interface Project {
   description: string
   fullDescription: string
   image: string
+  gallery: string[]
   location: string
   client: string
   duration: string
@@ -17,6 +18,9 @@ export interface Project {
   category: string
   status: string
   rating: number
+  completionDate: string
+  projectManager: string
+  teamSize: number
   features: string[]
   stats: {
     capacity: string
@@ -26,26 +30,26 @@ export interface Project {
     efficiency: string
     safety?: string
     quality?: string
+    satisfaction?: string
   }
-  gallery: string[]
   benefits: {
     title: string
     description: string
-    icon: React.ReactNode
+    icon: React.ElementType
   }[]
   process: {
     step: number
     title: string
     description: string
+    duration: string
   }[]
-  testimonials: {
-    name: string
+  testimonial: {
+    quote: string
+    author: string
     position: string
     company: string
-    content: string
-    rating: number
     avatar: string
-  }[]
+  }
   technicalSpecs: Record<string, string>
 }
 
@@ -58,8 +62,16 @@ export const projects: Project[] = [
     description:
       "Complete installation of a 50,000-ton grain storage terminal at Casablanca Port, including 8 flat-bottom silos, pneumatic unloading systems, and automated handling equipment.",
     fullDescription:
-      "This flagship project represents one of our most comprehensive installations in North Africa. The grain terminal complex at Casablanca Port was designed to handle the increasing grain import demands of Morocco while ensuring efficient storage and distribution. The project included the installation of 8 large-capacity flat-bottom silos, each equipped with advanced aeration systems and temperature monitoring. The pneumatic unloading systems allow for rapid ship discharge, reducing port congestion and operational costs. Our team worked closely with port authorities to ensure minimal disruption to ongoing operations while maintaining the highest safety standards.",
+      "This comprehensive project involved the complete design, fabrication, and installation of a state-of-the-art grain storage terminal at the Port of Casablanca. The facility features 8 flat-bottom silos with a total capacity of 50,000 tons, equipped with advanced pneumatic unloading systems and fully automated handling equipment. The project was completed in 18 months and represents one of the most modern grain handling facilities in North Africa.",
     image: "/placeholder.svg?height=600&width=800&text=Grain+Terminal+Morocco",
+    gallery: [
+      "/placeholder.svg?height=500&width=800&text=Grain+Terminal+1",
+      "/placeholder.svg?height=500&width=800&text=Grain+Terminal+2",
+      "/placeholder.svg?height=500&width=800&text=Grain+Terminal+3",
+      "/placeholder.svg?height=500&width=800&text=Grain+Terminal+4",
+      "/placeholder.svg?height=500&width=800&text=Grain+Terminal+5",
+      "/placeholder.svg?height=500&width=800&text=Grain+Terminal+6",
+    ],
     location: "Casablanca, Morocco",
     client: "Morocco Grain Authority",
     duration: "18 months",
@@ -68,113 +80,92 @@ export const projects: Project[] = [
     category: "port-facilities",
     status: "completed",
     rating: 4.9,
+    completionDate: "March 2023",
+    projectManager: "Ahmed Hassan",
+    teamSize: 45,
     features: [
-      "50,000-ton capacity",
-      "8 flat-bottom silos",
-      "Pneumatic unloading",
-      "Automated systems",
-      "Temperature monitoring",
-      "Dust control systems",
-      "Rail/truck loading",
-      "Quality control lab",
+      "50,000-ton total storage capacity",
+      "8 flat-bottom silos with advanced ventilation",
+      "Pneumatic unloading systems for ships",
+      "Automated grain handling and conveying",
+      "Quality control laboratory",
+      "Environmental dust control systems",
+      "24/7 monitoring and control systems",
+      "Rail and truck loading facilities",
     ],
     stats: {
       capacity: "50,000 tons",
       silos: 8,
       timeline: "18 months",
       workers: 45,
-      efficiency: "300% increase",
-      safety: "Zero incidents",
+      efficiency: "95%",
+      satisfaction: "4.9/5",
     },
-    gallery: [
-      "/placeholder.svg?height=400&width=600&text=Gallery+Image+1",
-      "/placeholder.svg?height=400&width=600&text=Gallery+Image+2",
-      "/placeholder.svg?height=400&width=600&text=Gallery+Image+3",
-      "/placeholder.svg?height=400&width=600&text=Gallery+Image+4",
-      "/placeholder.svg?height=400&width=600&text=Gallery+Image+5",
-      "/placeholder.svg?height=400&width=600&text=Gallery+Image+6",
-    ],
     benefits: [
       {
-        title: "Increased Storage Capacity",
-        description:
-          "The new terminal increased Morocco's grain storage capacity by 50,000 tons, significantly improving food security.",
-        icon: <Database className="w-6 h-6" />,
+        title: "Increased Efficiency",
+        description: "300% improvement in grain handling capacity compared to previous facilities",
+        icon: Target ,
       },
       {
-        title: "Enhanced Efficiency",
-        description: "Pneumatic unloading systems reduced ship discharge time by 60%, improving port throughput.",
-        icon: <Zap className="w-6 h-6" />,
+        title: "Quality Assurance",
+        description: "Advanced quality control systems ensure grain integrity throughout storage",
+        icon: Shield ,
       },
       {
-        title: "Quality Preservation",
-        description: "Advanced aeration and monitoring systems ensure grain quality throughout storage period.",
-        icon: <Shield className="w-6 h-6" />,
+        title: "Automation",
+        description: "Fully automated systems reduce manual labor and increase operational efficiency",
+        icon: Zap ,
       },
       {
-        title: "Automated Operations",
-        description: "Fully automated systems reduce labor costs and improve operational reliability.",
-        icon: <Settings className="w-6 h-6" />,
+        title: "Economic Impact",
+        description: "Significant boost to local economy and regional grain trade capabilities",
+        icon: TrendingUp ,
       },
     ],
     process: [
       {
         step: 1,
-        title: "Site Preparation & Foundation",
-        description:
-          "Comprehensive site survey, soil analysis, and construction of reinforced concrete foundations for all structures.",
+        title: "Site Assessment & Design",
+        description: "Comprehensive site analysis and custom design based on port requirements",
+        duration: "2 months",
       },
       {
         step: 2,
-        title: "Silo Assembly & Erection",
-        description:
-          "Precision assembly of 8 flat-bottom silos using advanced welding techniques and quality control procedures.",
+        title: "Fabrication & Manufacturing",
+        description: "Precision manufacturing of silos and equipment in our certified facilities",
+        duration: "8 months",
       },
       {
         step: 3,
-        title: "Equipment Installation",
-        description: "Installation of pneumatic unloading systems, conveyors, and automated handling equipment.",
+        title: "Installation & Assembly",
+        description: "On-site installation with specialized equipment and expert technicians",
+        duration: "6 months",
       },
       {
         step: 4,
-        title: "Systems Integration & Testing",
-        description: "Integration of control systems, comprehensive testing, and commissioning of all equipment.",
-      },
-      {
-        step: 5,
-        title: "Training & Handover",
-        description: "Comprehensive operator training and official handover to client with full documentation.",
+        title: "Testing & Commissioning",
+        description: "Comprehensive testing and system commissioning with client training",
+        duration: "2 months",
       },
     ],
-    testimonials: [
-      {
-        name: "Ahmed Benali",
-        position: "Director of Operations",
-        company: "Morocco Grain Authority",
-        content:
-          "GTIS delivered an exceptional project that exceeded our expectations. The terminal has transformed our grain handling capabilities.",
-        rating: 5,
-        avatar: "/placeholder.svg?height=60&width=60&text=AB",
-      },
-      {
-        name: "Fatima El Mansouri",
-        position: "Port Manager",
-        company: "Casablanca Port Authority",
-        content:
-          "The professionalism and expertise of the GTIS team was outstanding. They completed the project on time and within budget.",
-        rating: 5,
-        avatar: "/placeholder.svg?height=60&width=60&text=FM",
-      },
-    ],
+    testimonial: {
+      quote:
+        "GTIS delivered an exceptional grain terminal that exceeded our expectations. Their expertise in port facilities and attention to detail resulted in a world-class installation that has transformed our operations.",
+      author: "Mohammed El Fassi",
+      position: "Director of Operations",
+      company: "Morocco Grain Authority",
+      avatar: "/placeholder.svg?height=60&width=60&text=MF",
+    },
     technicalSpecs: {
       "Storage Capacity": "50,000 tons",
       "Number of Silos": "8 units",
-      "Silo Diameter": "18 meters",
-      "Silo Height": "25 meters",
+      "Silo Diameter": "15.2 meters",
+      "Silo Height": "28 meters",
       "Unloading Rate": "500 tons/hour",
+      "Conveyor Capacity": "300 tons/hour",
       "Power Requirements": "2.5 MW",
-      "Foundation Type": "Reinforced concrete",
-      "Steel Grade": "S355 structural steel",
+      "Control System": "Fully automated PLC",
     },
   },
   {
@@ -185,8 +176,15 @@ export const projects: Project[] = [
     description:
       "Turnkey installation of a 200-ton/day feed mill including grain intake, cleaning, grinding, mixing, pelleting, and packaging systems with full automation.",
     fullDescription:
-      "This state-of-the-art feed mill represents the latest in animal feed production technology. Located in Tunis, the facility was designed to meet the growing demand for high-quality animal feed in Tunisia and neighboring countries. The installation includes a complete production line from raw material intake to finished product packaging. Advanced automation systems ensure consistent product quality while minimizing labor requirements. The mill features energy-efficient equipment and dust control systems to meet environmental standards.",
+      "This state-of-the-art feed mill represents the latest in animal feed processing technology. The facility processes 200 tons per day of various feed ingredients, featuring advanced cleaning systems, precision grinding, automated mixing, pelleting equipment, and packaging lines. The entire operation is controlled by a sophisticated automation system that ensures consistent quality and optimal efficiency.",
     image: "/placeholder.svg?height=600&width=800&text=Feed+Mill+Tunisia",
+    gallery: [
+      "/placeholder.svg?height=500&width=800&text=Feed+Mill+1",
+      "/placeholder.svg?height=500&width=800&text=Feed+Mill+2",
+      "/placeholder.svg?height=500&width=800&text=Feed+Mill+3",
+      "/placeholder.svg?height=500&width=800&text=Feed+Mill+4",
+      "/placeholder.svg?height=500&width=800&text=Feed+Mill+5",
+    ],
     location: "Tunis, Tunisia",
     client: "Tunisia Feed Industries",
     duration: "12 months",
@@ -195,101 +193,92 @@ export const projects: Project[] = [
     category: "feed-mills",
     status: "completed",
     rating: 4.8,
+    completionDate: "June 2023",
+    projectManager: "Sarah Mansouri",
+    teamSize: 32,
     features: [
-      "200 tons/day capacity",
-      "Full automation",
-      "Quality control",
-      "Energy efficient",
-      "Dust control",
-      "Multi-species production",
-      "Pelleting system",
-      "Automated packaging",
+      "200 tons/day processing capacity",
+      "12 ingredient storage silos",
+      "Advanced grain cleaning systems",
+      "Precision grinding and mixing",
+      "Pelleting and crumbling systems",
+      "Automated packaging lines",
+      "Quality control laboratory",
+      "Dust collection and environmental controls",
     ],
     stats: {
       capacity: "200 tons/day",
       silos: 12,
       timeline: "12 months",
       workers: 32,
-      efficiency: "95% automation",
-      quality: "ISO 22000 certified",
+      efficiency: "92%",
+      satisfaction: "4.8/5",
     },
-    gallery: [
-      "/placeholder.svg?height=400&width=600&text=Feed+Mill+Gallery+1",
-      "/placeholder.svg?height=400&width=600&text=Feed+Mill+Gallery+2",
-      "/placeholder.svg?height=400&width=600&text=Feed+Mill+Gallery+3",
-      "/placeholder.svg?height=400&width=600&text=Feed+Mill+Gallery+4",
-      "/placeholder.svg?height=400&width=600&text=Feed+Mill+Gallery+5",
-      "/placeholder.svg?height=400&width=600&text=Feed+Mill+Gallery+6",
-    ],
     benefits: [
       {
-        title: "High Production Capacity",
-        description: "200 tons per day production capacity meets regional feed demand efficiently.",
-        icon: <Database className="w-6 h-6" />,
+        title: "High Efficiency",
+        description: "Optimized production flow with minimal waste and maximum output quality",
+        icon: Target ,
       },
       {
-        title: "Quality Assurance",
-        description: "Advanced quality control systems ensure consistent feed quality and nutritional value.",
-        icon: <Shield className="w-6 h-6" />,
+        title: "Food Safety",
+        description: "HACCP compliant systems ensure the highest food safety standards",
+        icon: Shield ,
       },
       {
-        title: "Energy Efficiency",
-        description: "Modern equipment reduces energy consumption by 30% compared to traditional mills.",
-        icon: <Zap className="w-6 h-6" />,
+        title: "Energy Efficient",
+        description: "Advanced technology reduces energy consumption by 25% compared to conventional mills",
+        icon: Zap ,
       },
       {
-        title: "Automated Operations",
-        description: "95% automation reduces labor costs and improves production consistency.",
-        icon: <Settings className="w-6 h-6" />,
+        title: "Scalable Design",
+        description: "Modular design allows for future expansion and capacity increases",
+        icon: TrendingUp ,
       },
     ],
     process: [
       {
         step: 1,
-        title: "Design & Engineering",
-        description: "Custom design of the feed mill layout optimized for efficiency and workflow.",
+        title: "Process Design & Engineering",
+        description: "Custom process design optimized for local feed formulations and requirements",
+        duration: "2 months",
       },
       {
         step: 2,
         title: "Equipment Manufacturing",
-        description: "Manufacturing of specialized equipment including mixers, pellet mills, and coolers.",
+        description: "Precision manufacturing of processing equipment and control systems",
+        duration: "6 months",
       },
       {
         step: 3,
-        title: "Installation & Assembly",
-        description: "Systematic installation of all equipment with precision alignment and calibration.",
+        title: "Installation & Integration",
+        description: "On-site installation and system integration with comprehensive testing",
+        duration: "3 months",
       },
       {
         step: 4,
-        title: "Automation Integration",
-        description: "Integration of control systems and automation for seamless operation.",
-      },
-      {
-        step: 5,
         title: "Commissioning & Training",
-        description: "Complete system commissioning and comprehensive operator training program.",
+        description: "System commissioning, operator training, and performance optimization",
+        duration: "1 month",
       },
     ],
-    testimonials: [
-      {
-        name: "Mohamed Trabelsi",
-        position: "General Manager",
-        company: "Tunisia Feed Industries",
-        content:
-          "The feed mill has revolutionized our production capabilities. GTIS delivered exactly what they promised.",
-        rating: 5,
-        avatar: "/placeholder.svg?height=60&width=60&text=MT",
-      },
-    ],
+    testimonial: {
+      quote:
+        "The feed mill delivered by GTIS has revolutionized our production capabilities. The quality and efficiency of the equipment, combined with their professional service, has exceeded all our expectations.",
+      author: "Karim Ben Ali",
+      position: "Production Manager",
+      company: "Tunisia Feed Industries",
+      avatar: "/placeholder.svg?height=60&width=60&text=KA",
+    },
     technicalSpecs: {
-      "Production Capacity": "200 tons/day",
-      "Raw Material Storage": "2,000 tons",
-      "Finished Product Storage": "500 tons",
-      "Pellet Mill Power": "250 kW",
-      "Mixer Capacity": "2 tons/batch",
-      "Automation Level": "95%",
-      "Quality Control": "NIR analyzer",
-      "Dust Collection": "Baghouse filter",
+      "Processing Capacity": "200 tons/day",
+      "Number of Silos": "12 units",
+      "Grinding Capacity": "15 tons/hour",
+      "Mixing Capacity": "10 tons/batch",
+      "Pelleting Rate": "8 tons/hour",
+      "Packaging Speed": "1,200 bags/hour",
+      "Power Requirements": "1.8 MW",
+      "Control System": "Advanced PLC with HMI",
     },
   },
   {
@@ -302,6 +291,14 @@ export const projects: Project[] = [
     fullDescription:
       "This major industrial project involved the expansion of one of Algeria's largest cement production facilities. The project included the installation of a new rotary kiln, raw material preparation systems, and cement storage infrastructure. Our team managed the complex logistics of installing heavy industrial equipment while maintaining ongoing production operations. The expansion increased the plant's daily production capacity by 2,000 tons, significantly contributing to Algeria's construction industry growth.",
     image: "/placeholder.svg?height=600&width=800&text=Cement+Plant+Algeria",
+    gallery: [
+      "/placeholder.svg?height=500&width=800&text=Cement+Plant+Gallery+1",
+      "/placeholder.svg?height=500&width=800&text=Cement+Plant+Gallery+2",
+      "/placeholder.svg?height=500&width=800&text=Cement+Plant+Gallery+3",
+      "/placeholder.svg?height=500&width=800&text=Cement+Plant+Gallery+4",
+      "/placeholder.svg?height=500&width=800&text=Cement+Plant+Gallery+5",
+      "/placeholder.svg?height=500&width=800&text=Cement+Plant+Gallery+6",
+    ],
     location: "Oran, Algeria",
     client: "Algeria Cement Corporation",
     duration: "24 months",
@@ -310,6 +307,9 @@ export const projects: Project[] = [
     category: "industrial-plants",
     status: "completed",
     rating: 4.7,
+    completionDate: "September 2022",
+    projectManager: "Hassan Benali",
+    teamSize: 65,
     features: [
       "2,000 tons/day increase",
       "New rotary kiln",
@@ -328,82 +328,62 @@ export const projects: Project[] = [
       efficiency: "40% increase",
       safety: "Zero incidents",
     },
-    gallery: [
-      "/placeholder.svg?height=400&width=600&text=Cement+Plant+Gallery+1",
-      "/placeholder.svg?height=400&width=600&text=Cement+Plant+Gallery+2",
-      "/placeholder.svg?height=400&width=600&text=Cement+Plant+Gallery+3",
-      "/placeholder.svg?height=400&width=600&text=Cement+Plant+Gallery+4",
-      "/placeholder.svg?height=400&width=600&text=Cement+Plant+Gallery+5",
-      "/placeholder.svg?height=400&width=600&text=Cement+Plant+Gallery+6",
-    ],
     benefits: [
       {
         title: "Production Expansion",
-        description: "Increased daily production capacity by 2,000 tons, meeting growing market demand.",
-        icon: <Database className="w-6 h-6" />,
+        description: "Increased daily production capacity by 2,000 tons, meeting growing market demand",
+        icon: Database ,
       },
       {
         title: "Energy Optimization",
-        description: "New kiln technology reduced energy consumption per ton by 25%.",
-        icon: <Zap className="w-6 h-6" />,
+        description: "New kiln technology reduced energy consumption per ton by 25%",
+        icon: Zap ,
       },
       {
         title: "Environmental Compliance",
-        description: "Advanced dust collection and emission control systems meet international standards.",
-        icon: <Shield className="w-6 h-6" />,
+        description: "Advanced dust collection and emission control systems meet international standards",
+        icon: Shield ,
       },
       {
         title: "Process Automation",
-        description: "Automated systems improve quality consistency and reduce operational costs.",
-        icon: <Settings className="w-6 h-6" />,
+        description: "Automated systems improve quality consistency and reduce operational costs",
+        icon: Settings ,
       },
     ],
     process: [
       {
         step: 1,
         title: "Project Planning & Design",
-        description: "Detailed engineering design and project planning while maintaining existing operations.",
+        description: "Detailed engineering design and project planning while maintaining existing operations",
+        duration: "4 months",
       },
       {
         step: 2,
         title: "Infrastructure Development",
-        description: "Construction of foundations and infrastructure for new equipment installation.",
+        description: "Construction of foundations and infrastructure for new equipment installation",
+        duration: "8 months",
       },
       {
         step: 3,
         title: "Equipment Installation",
-        description: "Installation of rotary kiln, raw material systems, and storage infrastructure.",
+        description: "Installation of rotary kiln, raw material systems, and storage infrastructure",
+        duration: "10 months",
       },
       {
         step: 4,
         title: "Systems Integration",
-        description: "Integration of new systems with existing plant operations and control systems.",
-      },
-      {
-        step: 5,
-        title: "Commissioning & Optimization",
-        description: "System commissioning, performance optimization, and operator training.",
+        description: "Integration of new systems with existing plant operations and control systems",
+        duration: "2 months",
       },
     ],
-    testimonials: [
-      {
-        name: "Karim Boumediene",
-        position: "Plant Manager",
-        company: "Algeria Cement Corporation",
-        content:
-          "The expansion project was completed flawlessly. GTIS managed the complexity of working within an active plant exceptionally well.",
-        rating: 5,
-        avatar: "/placeholder.svg?height=60&width=60&text=KB",
-      },
-      {
-        name: "Amina Cherif",
-        position: "Operations Director",
-        company: "Algeria Cement Corporation",
-        content: "The new systems have significantly improved our production efficiency and environmental performance.",
-        rating: 5,
-        avatar: "/placeholder.svg?height=60&width=60&text=AC",
-      },
-    ],
+    testimonial: {
+      quote:
+        "The expansion project was completed flawlessly. GTIS managed the complexity of working within an active plant exceptionally well.",
+      author: "Karim Boumediene",
+      position: "Plant Manager",
+      company: "Algeria Cement Corporation",
+      avatar: "/placeholder.svg?height=60&width=60&text=KB",
+    },
     technicalSpecs: {
       "Production Increase": "2,000 tons/day",
       "Kiln Diameter": "4.2 meters",
@@ -427,4 +407,8 @@ export const getProjectsByCategory = (category: string): Project[] => {
 
 export const getAllProjects = (): Project[] => {
   return projects
+}
+
+export const getRelatedProjects = (currentSlug: string, limit = 3): Project[] => {
+  return projects.filter((project) => project.slug !== currentSlug).slice(0, limit)
 }
